@@ -69,18 +69,33 @@ private:
 
 int main()
 {
-	MyStack stack;
+	//MyStack stack;
 
-	for (int i = 0; i < 10000; ++i) {
-		int randNo = rand() % 2;
-		switch (randNo) {
-		case 0: stack.push(rand() % 1000); break;
-		case 1: stack.pop(); break;
-		case 2:break;
-		default:break;
-		}
+	//for (int i = 0; i < 10000; ++i) {
+	//	int randNo = rand() % 2;
+	//	switch (randNo) {
+	//	case 0: stack.push(rand() % 1000); break;
+	//	case 1: stack.pop(); break;
+	//	case 2:break;
+	//	default:break;
+	//	}
+	//}
+
+	//stack.display(20);
+
+
+	int i = 3;
+	bool b = false;
+
+	int* ip = &i;
+	bool* bp = &b;
+
+	if (ip && bp) {
+		std::cout << "검사 성공\n";
+	}
+	else {
+		std::cout << "검사 실패\n";
 	}
 
-	stack.display(20);
 	return 0;
 }
