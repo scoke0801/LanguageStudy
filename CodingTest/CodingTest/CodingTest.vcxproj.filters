@@ -36,5 +36,8 @@
     <ClCompile Include="kakao_internship_1_numstring_and_word.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="kakao_intenrship_lv1_keypad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
