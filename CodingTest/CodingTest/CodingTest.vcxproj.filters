@@ -39,5 +39,11 @@
     <ClCompile Include="kakao_intenrship_lv1_keypad.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="tets.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_lv1_crane.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
