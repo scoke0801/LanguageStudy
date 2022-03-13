@@ -13,43 +13,49 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\푼거">
+      <UniqueIdentifier>{583443b4-9ed4-467c-8343-46f78dfe1262}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="disk_controller.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="double_prioirity_queue.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="connect_island.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="surveillance_camera.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="joystick.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="balloons.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="kakao_internship_1_numstring_and_word.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="kakao_intenrship_lv1_keypad.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="tets.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="kakao_lv1_crane.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="add_eum_yang.cpp">
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
     <ClCompile Include="add_not_exist_num.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
-    <ClCompile Include="add_eum_yang.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="balloons.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="connect_island.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="disk_controller.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="double_prioirity_queue.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="joystick.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_intenrship_lv1_keypad.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_internship_1_numstring_and_word.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="kakao_lv1_crane.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="ponketmon.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="surveillance_camera.cpp">
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
