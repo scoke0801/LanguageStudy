@@ -57,5 +57,8 @@
     <ClCompile Include="surveillance_camera.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="HateSameNum.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
