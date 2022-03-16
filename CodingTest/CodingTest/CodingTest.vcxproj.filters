@@ -66,5 +66,11 @@
     <ClCompile Include="AddAndNumOfDivisor.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="FailureRate.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="2016Year.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
