@@ -84,5 +84,14 @@
     <ClCompile Include="DivideArray.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="HIdePhoneNumber.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="nNumber_xGap.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="AddMatrix.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
