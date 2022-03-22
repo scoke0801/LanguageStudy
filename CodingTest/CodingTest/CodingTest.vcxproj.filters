@@ -97,7 +97,19 @@
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
     <ClCompile Include="CollatzNum.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="EvenOrOdd.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="descendingSort.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoveSmallestNum.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorAverage.cpp">
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
