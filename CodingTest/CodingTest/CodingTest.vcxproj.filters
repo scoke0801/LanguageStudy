@@ -111,5 +111,11 @@
     <ClCompile Include="VectorAverage.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="IsPowOrNot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GCD_LCM.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
