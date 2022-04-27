@@ -111,11 +111,23 @@
     <ClCompile Include="VectorAverage.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="GCD_LCM.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
     <ClCompile Include="IsPowOrNot.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="ReverseArray.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="AddDigitNum.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateOddNum.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GCD_LCM.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="SumOfFactors.cpp">
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
