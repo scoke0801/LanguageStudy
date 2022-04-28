@@ -123,11 +123,23 @@
     <ClCompile Include="AddDigitNum.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
-    <ClCompile Include="CreateOddNum.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="SumOfFactors.cpp">
       <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateOddNum.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="strToNum1.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="CaesarCypher.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="subaksubak.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="FindDecimals_1.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
