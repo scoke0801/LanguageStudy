@@ -145,6 +145,9 @@
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
     <ClCompile Include="HandleStringBase.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="VisitLength.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
