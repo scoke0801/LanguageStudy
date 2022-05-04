@@ -148,7 +148,10 @@
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
     <ClCompile Include="VisitLength.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="Num_Make_Rest_1.cpp">
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
