@@ -163,10 +163,10 @@
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
     <ClCompile Include="SecretMap.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
-    <ClCompile Include="ReverseTernary.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="kakaoDart.cpp">
+      <Filter>소스 파일\푼거</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
