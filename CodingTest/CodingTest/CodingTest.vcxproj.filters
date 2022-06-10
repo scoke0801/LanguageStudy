@@ -168,5 +168,14 @@
     <ClCompile Include="kakaoDart.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="makeLower.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="StandLine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="minimunSquare.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
