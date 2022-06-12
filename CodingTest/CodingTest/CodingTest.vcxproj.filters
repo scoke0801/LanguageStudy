@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\푼거">
       <UniqueIdentifier>{583443b4-9ed4-467c-8343-46f78dfe1262}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\못푼거">
+      <UniqueIdentifier>{36edf9f7-dee2-4c38-ad50-defaad7d6256}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tets.cpp">
@@ -65,9 +68,6 @@
     </ClCompile>
     <ClCompile Include="AddAndNumOfDivisor.cpp">
       <Filter>소스 파일\푼거</Filter>
-    </ClCompile>
-    <ClCompile Include="FailureRate.cpp">
-      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="2016Year.cpp">
       <Filter>소스 파일\푼거</Filter>
@@ -168,14 +168,17 @@
     <ClCompile Include="kakaoDart.cpp">
       <Filter>소스 파일\푼거</Filter>
     </ClCompile>
+    <ClCompile Include="minimunSquare.cpp">
+      <Filter>소스 파일\푼거</Filter>
+    </ClCompile>
+    <ClCompile Include="FailureRate.cpp">
+      <Filter>소스 파일\못푼거</Filter>
+    </ClCompile>
     <ClCompile Include="makeLower.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\못푼거</Filter>
     </ClCompile>
     <ClCompile Include="StandLine.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="minimunSquare.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\못푼거</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
