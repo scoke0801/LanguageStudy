@@ -43,3 +43,7 @@
 *.iobj
 *.ipdb
 *.ilk
+
+**/.vs
+**/Debug
+**/x64
