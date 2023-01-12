@@ -7,27 +7,45 @@
     <Filter Include="Board">
       <UniqueIdentifier>{42326756-097a-40c3-860a-23779286017a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Header">
+      <UniqueIdentifier>{31f92f10-42db-4470-bd11-50b0fe4a7e5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{623eec9b-2787-47fd-93ac-257df5038861}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Algorithm\ConsoleHelper.cpp">
+    <ClCompile Include="Board.cpp">
       <Filter>Board</Filter>
     </ClCompile>
-    <ClCompile Include="..\Algorithm\Maze.cpp">
+    <ClCompile Include="Maze.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="..\Algorithm\stdafx.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="ConsoleHelper.cpp">
+      <Filter>Board</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Main\Header</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Algorithm\ConsoleHelper.h">
+    <ClInclude Include="Board.h">
       <Filter>Board</Filter>
     </ClInclude>
-    <ClInclude Include="..\Algorithm\stdafx.h">
-      <Filter>Main</Filter>
+    <ClInclude Include="ConsoleHelper.h">
+      <Filter>Board</Filter>
     </ClInclude>
-    <ClInclude Include="..\Algorithm\Types.h">
-      <Filter>Main</Filter>
+    <ClInclude Include="stdafx.h">
+      <Filter>Main\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Main\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

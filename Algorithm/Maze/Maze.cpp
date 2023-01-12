@@ -1,8 +1,18 @@
 #include "stdafx.h"
 #include "ConsoleHelper.h"
+#include "Board.h"
+#include <ctime>
+#include "Player.h"
 
+Board board;
+Player player;
 int main()
 {
+	srand(UINT(time(nullptr)));
+
+	board.Init(25, &player);
+	player.Init(&board);
+
 	uint64 lastTick = 0;
 
 	while (true)
@@ -15,10 +25,10 @@ int main()
 		// 입력
 		
 		// 로직
+		player.Update(currentTick);
 		
 		// 렌더링
-	
-
+		board.Render();
 	
 	}
 }
