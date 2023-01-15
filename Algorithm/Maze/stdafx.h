@@ -44,5 +44,5 @@ enum Dir
 	DIR_DOWN,
 	DIR_RIGHT,
 
-	END,
+	DIR_COUNT = 4,
 };
