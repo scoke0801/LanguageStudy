@@ -5,4 +5,9 @@
       <UniqueIdentifier>{c18a7ff6-ea91-4a1e-9f40-c6daf4e17dfd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DynamicArray.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
