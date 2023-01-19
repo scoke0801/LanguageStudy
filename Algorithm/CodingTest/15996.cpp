@@ -10,8 +10,3 @@ long long sum(std::vector<int>& a)
 	}
 	return ans;
 }
-int main()
-{
-	
-
-}
