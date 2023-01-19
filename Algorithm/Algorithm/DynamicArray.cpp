@@ -84,29 +84,30 @@ private:
 	int _size = 0;
 	int _capacity = 0;
 };
-int main()
-{
-	Vector<int> v;
 
-	v.resize(10);
-	cout << v.size() << " " << v.capacity() << endl;
-
-	Vector<int> v2;
-
-	v2.reserve(10);
-	cout << v2.size() << " " << v2.capacity() << endl;
-
-	v.reserve(100);
-	for (int i = 0; i < 100; ++i)
-	{
-		v.push_back(i);
-		cout << v[i] << " " << v.size() << " " << v.capacity() << "\n";
-	}
-
-	v.clear();
-	cout << v.size() << " " << v.capacity() << endl;
-
-	vector<int> a;
-	
-	a.clear();
-}
+//int main()
+//{
+//	Vector<int> v;
+//
+//	v.resize(10);
+//	cout << v.size() << " " << v.capacity() << endl;
+//
+//	Vector<int> v2;
+//
+//	v2.reserve(10);
+//	cout << v2.size() << " " << v2.capacity() << endl;
+//
+//	v.reserve(100);
+//	for (int i = 0; i < 100; ++i)
+//	{
+//		v.push_back(i);
+//		cout << v[i] << " " << v.size() << " " << v.capacity() << "\n";
+//	}
+//
+//	v.clear();
+//	cout << v.size() << " " << v.capacity() << endl;
+//
+//	vector<int> a;
+//	
+//	a.clear();
+//}
