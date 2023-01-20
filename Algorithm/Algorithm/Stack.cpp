@@ -30,7 +30,7 @@ private:
 	// vector<T> _container;
 	// list<T> _container;
 };
-int main()
+int main__()
 {
 	Stack<int> s;
 
@@ -43,4 +43,5 @@ int main()
 		s.pop();
 		cout << data << "\n";
 	}
+	return 0;
 }

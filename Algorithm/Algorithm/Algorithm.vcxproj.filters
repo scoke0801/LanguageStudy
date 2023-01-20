@@ -15,5 +15,8 @@
     <ClCompile Include="Stack.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Queue.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
