@@ -3,7 +3,7 @@
 using namespace std;
 
 int sum[100001][3] = { 0, };
-int main()
+int main_()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
@@ -35,4 +35,5 @@ int main()
 		}
 		cout << "\n";
 	}
+	return 0;
 }
