@@ -151,7 +151,7 @@ private:
 	int			_size;
 };
 
-int main()
+int main_()
 {
 	List<int> list;
 
@@ -172,4 +172,6 @@ int main()
 	for (List<int>::iterator it = list.begin(); it != list.end(); ++it) {
 		cout << *it << endl;
 	}
+
+	return 0;
 }
