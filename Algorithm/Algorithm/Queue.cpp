@@ -82,7 +82,7 @@ private:
 	
 };
 
-int main()
+int main____()
 {
 	Queue<int> q;
 
