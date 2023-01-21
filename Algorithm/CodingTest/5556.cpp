@@ -2,7 +2,7 @@
 using namespace std;
 
 int color[3] = { 1,2,3 };
-int main()
+int main__()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
