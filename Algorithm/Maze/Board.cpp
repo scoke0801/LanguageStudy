@@ -64,7 +64,7 @@ void Board::CreateMap()
 			{
 				continue;
 			}
-			if (y == _size - 2 && _size - 2) {
+			if (y == _size - 2 && x == _size - 2) {
 				continue;
 			}
 
