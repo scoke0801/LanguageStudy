@@ -17,6 +17,11 @@ public:
 private:	
 	bool			CanMove(Pos pos);
 	
+private:
+	// ¿ì¼ö¹ý
+	void			FindPath_RIghtHand();
+	void			FindPath_BFS();
+
 private:	
 	Pos				_pos = {};
 		

@@ -8,13 +8,37 @@ void Player::Init(Board* board)
 	_pos = board->GetEnterPos();
 	_board = board;
 
+	//	FindPath_RIghtHand();
+	FindPath_BFS();
+}
+
+void Player::Update(uint64 deltaTick)
+{
+	if (_pathIndex >= _path.size()) { return; }
+
+	_sumTick += deltaTick;
+	if (_sumTick > MOVE_TICK) {
+		_sumTick = 0;
+
+		_pos = _path[_pathIndex++];
+	}
+}
+
+bool Player::CanMove(Pos pos)
+{
+	TileType tileType = _board->GetTileType(pos);
+	return tileType == TileType::EMPTY;
+}
+
+void Player::FindPath_RIghtHand()
+{
 	Pos pos = _pos;
 
 	_path.clear();
 	_path.push_back(pos);
 
 	// 목적지 도착하기 전에는 계속 실행
-	Pos dest = board->GetExitPos();
+	Pos dest = _board->GetExitPos();
 
 	Pos front[4] =
 	{
@@ -71,7 +95,7 @@ void Player::Init(Board* board)
 	stack<Pos> s;
 
 	for (size_t i = 0; i < _path.size() - 1; ++i) {
-		if (s.empty() == false && s.top() == _path[i+1]) {
+		if (s.empty() == false && s.top() == _path[i + 1]) {
 			s.pop();
 		}
 		else {
@@ -91,24 +115,69 @@ void Player::Init(Board* board)
 
 	std::reverse(path.begin(), path.end());
 
-//	std::swap(_path, path);
+	//	std::swap(_path, path);
 	_path = path;
 }
 
-void Player::Update(uint64 deltaTick)
+void Player::FindPath_BFS()
 {
-	if (_pathIndex >= _path.size()) { return; }
+	Pos pos = _pos;
 
-	_sumTick += deltaTick;
-	if (_sumTick > MOVE_TICK) {
-		_sumTick = 0;
+	// 목적지 도착하기 전에는 계속 실행
+	Pos dest = _board->GetExitPos();
 
-		_pos = _path[_pathIndex++];
+	Pos front[4] =
+	{
+		Pos { -1, 0},	// UP
+		Pos { 0, -1},	// LEFT
+		Pos { 1, 0},	// DOWN
+		Pos { 0, 1},	// RIGHT
+	};
+
+	const int32 boardSize = _board->GetSize();
+	vector<vector<bool>> discovered(boardSize, vector<bool>(boardSize, false));
+
+	// parent[a] = b; :: a는 b로 인해 발견함.
+	map<Pos, Pos> parent;
+
+	queue<Pos> q;
+	q.push(pos);
+	discovered[pos.y][pos.x] = true;
+	parent[pos] = pos;
+
+	while (q.empty() == false) {
+		pos = q.front();
+		q.pop();
+
+		// visit
+		if (pos == dest) {
+			break;
+		}
+
+		for (int32 dir = 0; dir < 4; ++dir) {
+			Pos nextPos = pos + front[dir];
+
+			if (CanMove(nextPos) == false) { continue; }
+
+			// 이미 발견한 지역인지 확인.
+			if (discovered[nextPos.y][nextPos.x] == true) { continue; }
+
+			q.push(nextPos);
+			discovered[nextPos.y][nextPos.x] = true;
+			parent[nextPos] = pos;
+		}
 	}
-}
 
-bool Player::CanMove(Pos pos)
-{
-	TileType tileType = _board->GetTileType(pos);
-	return tileType == TileType::EMPTY;
+	_path.clear();
+
+	pos = dest;
+	while (true) {
+		_path.push_back(pos);
+
+		if (pos == parent[pos]) { break; }
+
+		pos = parent[pos];
+	}
+
+	std::reverse(_path.begin(), _path.end());
 }
