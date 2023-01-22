@@ -84,7 +84,7 @@ void DfsAll()
 	}
 }
 
-int main()
+int main_DFS()
 {
 	visited = vector<bool>(6, false);
 

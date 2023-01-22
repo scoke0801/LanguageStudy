@@ -27,5 +27,8 @@
     <ClCompile Include="14682.cpp">
       <Filter>Solve</Filter>
     </ClCompile>
+    <ClCompile Include="1526.cpp">
+      <Filter>Solve</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

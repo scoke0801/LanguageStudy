@@ -2,7 +2,7 @@
 #include <cmath>
 using namespace std;
 
-int main()
+int main__14682()
 {
 	int N, K;
 	cin >> N >> K;

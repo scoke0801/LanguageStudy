@@ -1,6 +1,12 @@
 #pragma once
 
 #include <iostream>
+#include <vector>
+#include <list>
+#include <stack>
+#include <queue>
+#include <algorithm>
+using namespace std;
 
 template<typename ... Args>
 std::string string_format(const std::string& format, Args ... args)

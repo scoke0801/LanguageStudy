@@ -21,8 +21,16 @@
     <ClCompile Include="Graph.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Graph_2.cpp">
+    <ClCompile Include="GraphDFS.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="GraphBFS.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
