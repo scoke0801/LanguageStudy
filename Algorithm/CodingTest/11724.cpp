@@ -56,4 +56,6 @@ int main_11724()
 	}
 
 	cout << count << "\n";
+
+	return 0;
 }
