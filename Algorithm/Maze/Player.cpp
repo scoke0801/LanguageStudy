@@ -153,6 +153,7 @@ void Player::FindPath_BFS()
 		if (pos == dest) {
 			break;
 		}
+		
 
 		for (int32 dir = 0; dir < 4; ++dir) {
 			Pos nextPos = pos + front[dir];
@@ -167,6 +168,7 @@ void Player::FindPath_BFS()
 			parent[nextPos] = pos;
 		}
 	}
+	
 
 	_path.clear();
 
