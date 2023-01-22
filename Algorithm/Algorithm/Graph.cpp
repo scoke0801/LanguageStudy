@@ -91,9 +91,11 @@ void CreateGraph_3()
 	}
 }
 
-int main()
+int main_Graph1()
 {
 	//CreateGraph_1();
 	CreateGraph_2();
 	CreateGraph_3();
+
+	return 0;
 }

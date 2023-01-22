@@ -21,5 +21,8 @@
     <ClCompile Include="Graph.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Graph_2.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
