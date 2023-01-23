@@ -4,6 +4,12 @@
     <Filter Include="Main">
       <UniqueIdentifier>{c18a7ff6-ea91-4a1e-9f40-c6daf4e17dfd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Graph">
+      <UniqueIdentifier>{b7fc0991-7860-4439-9064-33f6a3e49528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main\Tree">
+      <UniqueIdentifier>{9ab24be0-55d7-470c-b362-63db4b29af6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicArray.cpp">
@@ -19,15 +25,20 @@
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Graph.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphDFS.cpp">
-      <Filter>Main</Filter>
+      <Filter>Main\Graph</Filter>
     </ClCompile>
     <ClCompile Include="GraphBFS.cpp">
-      <Filter>Main</Filter>
+      <Filter>Main\Graph</Filter>
     </ClCompile>
-    <ClCompile Include="Dijkstra.cpp" />
+    <ClCompile Include="GraphDFS.cpp">
+      <Filter>Main\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Dijkstra.cpp">
+      <Filter>Main\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree_1.cpp">
+      <Filter>Main\Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">

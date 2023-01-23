@@ -6,6 +6,7 @@
 #include <stack>
 #include <queue>
 #include <algorithm>
+#include <memory>
 using namespace std;
 
 template<typename ... Args>

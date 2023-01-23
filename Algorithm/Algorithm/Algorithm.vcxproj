@@ -27,6 +27,7 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Tree_1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
