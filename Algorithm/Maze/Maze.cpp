@@ -4,14 +4,14 @@
 #include <ctime>
 #include "Player.h"
 
-Board board;
+Board candies;
 Player player;
 int main()
 {
 	srand(UINT(time(nullptr)));
 
-	board.Init(25, &player);
-	player.Init(&board);
+	candies.Init(25, &player);
+	player.Init(&candies);
 
 	uint64 lastTick = 0;
 
@@ -28,7 +28,7 @@ int main()
 		player.Update(deltaTick);
 		
 		// ·»´õ¸µ
-		board.Render();
+		candies.Render();
 	
 	}
 }

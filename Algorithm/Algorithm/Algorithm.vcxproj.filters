@@ -27,6 +27,7 @@
     <ClCompile Include="GraphBFS.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Dijkstra.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
