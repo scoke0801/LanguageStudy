@@ -49,7 +49,10 @@
       <Filter>Tried</Filter>
     </ClCompile>
     <ClCompile Include="1018.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1152.cpp">
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
