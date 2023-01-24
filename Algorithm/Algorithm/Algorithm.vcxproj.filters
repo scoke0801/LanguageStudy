@@ -39,6 +39,9 @@
     <ClCompile Include="Tree_1.cpp">
       <Filter>Main\Tree</Filter>
     </ClCompile>
+    <ClCompile Include="HeapTree.cpp">
+      <Filter>Main\Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
