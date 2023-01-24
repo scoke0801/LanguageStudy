@@ -7,14 +7,21 @@ void Player::Init(Board* board)
 {
 	_pos = board->GetEnterPos();
 	_board = board;
+	_pathIndex = 0;
 
 	//	FindPath_RIghtHand();
-	FindPath_BFS();
+	//	FindPath_BFS();
+	FindPath_AStar();
 }
 
 void Player::Update(uint64 deltaTick)
 {
-	if (_pathIndex >= _path.size()) { return; }
+	if (_pathIndex >= _path.size())
+	{
+		_board->CreateMap();
+		Init(_board);
+		return; 
+	}
 
 	_sumTick += deltaTick;
 	if (_sumTick > MOVE_TICK) {
@@ -169,10 +176,144 @@ void Player::FindPath_BFS()
 		}
 	}
 	
-
 	_path.clear();
 
 	pos = dest;
+	while (true) {
+		_path.push_back(pos);
+
+		if (pos == parent[pos]) { break; }
+
+		pos = parent[pos];
+	}
+
+	std::reverse(_path.begin(), _path.end());
+}
+
+struct PQNode {
+	int32	f;
+	int32	g;
+	Pos		pos;
+
+	bool operator<(const PQNode& other) const { return f < other.f; }
+	bool operator>(const PQNode& other) const { return f > other.f; }
+};
+
+void Player::FindPath_AStar()
+{
+	// 점수 매기기?
+	// 다익스트라에서는 가중치의 합
+
+	// AStar 평가 식
+	// F = G + H
+	// F = 최종 점수( 현재 코드에서는 작을 수록 좋음, 경로에 따라 달라짐)
+	// G = 시작점에서 해당 좌표까지 이동하는데 드는 비용( 작을 수록 좋음, 경로에 따라 달라짐 )
+	// H = 목적지에서 얼마나 가까운지 ( 작을 수록 좋음, 고정 )
+
+	Pos start = _pos;
+	Pos dest = _board->GetExitPos();
+
+	// 대각성을 사용하면 8, 사용안하면 4
+	constexpr int DIR_COUNT = 8;
+	Pos front[] =
+	{
+		Pos { -1, 0},	// UP
+		Pos { 0, -1},	// LEFT
+		Pos { 1, 0},	// DOWN
+		Pos { 0, 1},	// RIGHT
+		Pos {-1,-1},	// Up_Left
+		Pos { 1, -1},	// Down_Left
+		Pos {1,1},		// Down_Right
+		Pos {-1,1},		// Up_Right
+	};
+
+	int32 cost[] = {
+		10, // UP
+		10, // LEFT
+		10, // DOWN
+		10, // RIGHT
+		14, // Up_Left
+		14,	// Down_Left
+		14,	// Down_Right
+		14,	// Up_Right
+	};
+
+	const int32 boardSize = _board->GetSize();
+
+	// 방문한 목록(ClosedList)
+	vector < vector<bool>> closed(boardSize, vector<bool>(boardSize, false));
+
+	// best[y][x] = 지금까지 (y,x)에 대한 가장 좋은 비용
+	vector<vector<int32>> best(boardSize, vector<int32>(boardSize, INT32_MAX));
+
+	// 부모 추적 용도.
+	map<Pos, Pos> parent;
+
+	// OpenList
+	priority_queue<PQNode, vector<PQNode>, greater<PQNode>> pq;
+	// TODO
+	// 1) 예약 (발견)시스템 구현
+	// - 이미 더좋은 경로를 찾았다면 스킵하도록 구현
+	// 2) 뒤늦게 더 좋은 경로가 발견될 수 있음 - > 예외 처리 필요.
+	// - openList에서 찾아서 제거하거나
+	// - pq에서 pop한 다음에 무시하거나	
+
+	// 초기값
+	{
+		int32 g = 0;
+		int32 h = 10 * (abs(dest.y - start.y) + abs(dest.x - start.x));
+
+		pq.push(PQNode{ g + h, g, start });
+		best[start.y][start.x] = g + h;
+		parent[start] = start;
+	}
+
+	while (pq.empty() == false) {
+		// 제일 좋은 후보를 찾는다.
+		PQNode node = pq.top();
+		pq.pop();
+
+		// 동일한 좌표를 여러 경로로 찾아서
+		// 더 빠른 경로로 인해서 이미 방문(Closed)된 경우는 스킵.
+
+		// [선택] :: closedList를 사용하든, best값을 통해서 사용하든, 아래 두 식 중 한가지를 사용하면 됨
+		if (closed[node.pos.y][node.pos.x]) { continue; }
+		// if (best[node.pos.y][node.pos.x] < node.f) { continue;  }
+
+		// 방문
+		closed[node.pos.y][node.pos.x] = true;
+
+		// 목적지에 도착했으면 바로 종료.
+		if (node.pos == dest) { break; }
+
+		for (int32 dir = 0; dir < DIR_COUNT; ++dir)
+		{
+			Pos nextPos = node.pos + front[dir];
+			
+			// 갈 수 있는 지역이 맞는지
+			if (CanMove(nextPos) == false) { continue; }
+
+			// [ 선택사항 ] 이미 방문한 곳이라면 스킵.
+			// 안해도 pq.pop하는 과정에서 스킵되긴 할건데, 이게 좀 더 좋은가?
+			if (closed[nextPos.y][nextPos.x]) { continue; }
+
+			// 비용 계산
+			int32 g = node.g + cost[dir];
+			int32 h = 10 * (abs(dest.y - nextPos.y) + abs(dest.x - nextPos.x));
+
+			// 다른 경로에서 더 빠른 길을 찾았으면 스킵.
+			if (best[nextPos.y][nextPos.x] <= g + h) { continue; }
+
+			// 예약 진행
+			best[nextPos.y][nextPos.x] = g + h;
+			pq.push(PQNode{ g + h, g, nextPos });
+			parent[nextPos] = node.pos;
+		}
+	}
+
+	_path.clear();
+
+	Pos pos = dest;
 	while (true) {
 		_path.push_back(pos);
 

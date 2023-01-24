@@ -60,7 +60,7 @@ public:
 				break;
 			}
 
-			if (_predicate( _container[child], _container[right])) {
+			if (_predicate( _container[child],	 _container[right])) {
 				child = right;
 			}
 

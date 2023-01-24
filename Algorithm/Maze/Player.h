@@ -21,6 +21,7 @@ private:
 	// ¿ì¼ö¹ý
 	void			FindPath_RIghtHand();
 	void			FindPath_BFS();
+	void			FindPath_AStar();
 
 private:	
 	Pos				_pos = {};
