@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="DynamicArray.cpp" />
     <ClCompile Include="Graph.cpp" />

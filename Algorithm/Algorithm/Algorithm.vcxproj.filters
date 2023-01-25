@@ -42,6 +42,9 @@
     <ClCompile Include="HeapTree.cpp">
       <Filter>Main\Tree</Filter>
     </ClCompile>
+    <ClCompile Include="BinaryTree.cpp">
+      <Filter>Main\Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">

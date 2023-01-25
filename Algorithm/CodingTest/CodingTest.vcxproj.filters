@@ -61,7 +61,7 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="1085.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
