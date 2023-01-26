@@ -28,11 +28,13 @@
     <ClCompile Include="HeapTree.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="RedBlackTree.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Tree_1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
+    <ClInclude Include="RedBlackTree.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

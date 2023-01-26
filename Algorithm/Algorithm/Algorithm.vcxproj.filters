@@ -45,10 +45,16 @@
     <ClCompile Include="BinaryTree.cpp">
       <Filter>Main\Tree</Filter>
     </ClCompile>
+    <ClCompile Include="RedBlackTree.cpp">
+      <Filter>Main\Tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="RedBlackTree.h">
+      <Filter>Main\Tree</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
