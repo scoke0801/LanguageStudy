@@ -82,7 +82,13 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="11650.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11050.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2609.cpp">
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
