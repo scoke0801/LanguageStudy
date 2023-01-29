@@ -129,5 +129,11 @@
     <ClCompile Include="1929.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
+    <ClCompile Include="1645.cpp">
+      <Filter>Current</Filter>
+    </ClCompile>
+    <ClCompile Include="2805.cpp">
+      <Filter>Current</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
