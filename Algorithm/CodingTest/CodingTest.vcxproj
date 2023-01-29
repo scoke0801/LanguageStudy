@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="1018.cpp" />
+    <ClCompile Include="10773.cpp" />
     <ClCompile Include="10814.cpp" />
     <ClCompile Include="10816.cpp" />
     <ClCompile Include="10818.cpp" />
@@ -148,6 +149,7 @@
     <ClCompile Include="1526.cpp" />
     <ClCompile Include="15829.cpp" />
     <ClCompile Include="1920.cpp" />
+    <ClCompile Include="1966.cpp" />
     <ClCompile Include="2231.cpp" />
     <ClCompile Include="2292.cpp" />
     <ClCompile Include="2609.cpp" />
