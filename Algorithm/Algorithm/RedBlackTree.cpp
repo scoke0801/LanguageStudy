@@ -14,6 +14,15 @@ void SetCursorColor(ConsoleColor color)
 	::SetConsoleTextAttribute(output, static_cast<SHORT>(color));
 }
 
+void ShowConsoleCursor(bool flag)
+{
+	HANDLE output = ::GetStdHandle(STD_OUTPUT_HANDLE);
+	CONSOLE_CURSOR_INFO cursorInfo;
+	::GetConsoleCursorInfo(output, &cursorInfo);
+	cursorInfo.bVisible = flag;
+	::SetConsoleCursorInfo(output, &cursorInfo);
+}
+
 RedBlackTree::RedBlackTree()
 {
 	_nil = new Node(); // Black
@@ -165,6 +174,13 @@ void RedBlackTree::Print(Node* node, int x, int y)
 	SetCursorColor(ConsoleColor::WHITE);
 }
 
+void RedBlackTree::Print()
+{
+	::system("cls");
+	ShowConsoleCursor(false);
+	Print(_root, 10, 0);
+}
+
 Node* RedBlackTree::Search(Node* node, int key)
 {
 	if (node == _nil) { return nullptr; }
@@ -234,7 +250,7 @@ Node* RedBlackTree::Next(Node* node)
 
 void RedBlackTree::Replace(Node* u, Node* v)
 {
-	if (u->parent == nullptr) {
+	if (u->parent == _nil) {
 		_root = v;
 	}
 	else if (u == u->parent->left) {
@@ -253,12 +269,25 @@ void RedBlackTree::Replace(Node* u, Node* v)
 
 void RedBlackTree::Delete(Node* node)
 {
-	if (node == nullptr) { return; }
-	if (node->left == nullptr) {
+	if (node == _nil) { return; }
+
+	if (node->left == _nil) {
+		Color color = node->color;
+		Node* right = node->right;
 		Replace(node, node->right);
+
+		if (color == Color::Black) {
+			DeleteFixup(right);
+		}
 	}
-	else if (node->right == nullptr) {
+	else if (node->right == _nil) {
+		Color color = node->color;
+		Node* left = node->left;
 		Replace(node, node->left);
+
+		if (color == Color::Black) {
+			DeleteFixup(left);
+		}
 	}
 	else {
 		// 다음 데이터 찾기.
@@ -272,6 +301,87 @@ void RedBlackTree::Delete(int key)
 {
 	Node* deleteNode = Search(_root, key);
 	Delete(deleteNode);
+}
+
+void RedBlackTree::DeleteFixup(Node* node)
+{
+	// delete node;
+	Node* x = node;
+
+	while (x != _root && x->color == Color::Black) {
+		if (x == x->parent->left)
+		{
+			// case[3]
+			// 형제 노드 silbing
+			Node* s = x->parent->right;
+			if (s->color == Color::Red) {
+				s->color = Color::Black;
+				x->parent->color = Color::Red;
+
+				LeftRotate(x->parent);
+
+				s = x->parent->right; // [1]
+			}
+
+			// case[4]
+			if (s->left->color == Color::Black && s->right->color == Color::Black) {
+				s->color = Color::Red;
+				x = x->parent;
+			}
+			else {
+				// [case5]
+				if (s->right->color == Color::Black) {
+					s->left->color = Color::Black;
+					s->color = Color::Red;
+					RightRotate(s);
+					s = x->parent->right;
+				}
+
+				// case[6] 
+				s->color = x->parent->color;
+				x->parent->color = Color::Black;
+				s->right->color = Color::Black;
+				LeftRotate(x->parent);
+				x = _root;
+			}
+		}
+		else {
+			// case[3]
+			// 형제 노드 silbing
+			Node* s = x->parent->left;
+			if (s->color == Color::Red) {
+				s->color = Color::Black;
+				x->parent->color = Color::Red;
+
+				RightRotate(x->parent);
+
+				s = x->parent->left; // [1]
+			}
+
+			// case[4]
+			if (s->right->color == Color::Black && s->left->color == Color::Black) {
+				s->color = Color::Red;
+				x = x->parent;
+			}
+			else {
+				// [case5]
+				if (s->left->color == Color::Black) {
+					s->right->color = Color::Black;
+					s->color = Color::Red;
+					LeftRotate(s);
+					s = x->parent->left;
+				}
+
+				// case[6] 
+				s->color = x->parent->color;
+				x->parent->color = Color::Black;
+				s->left->color = Color::Black;
+				RightRotate(x->parent);
+				x = _root;
+			}
+		}
+	}
+	x->color = Color::Black;
 }
 
 //		[y]
@@ -355,11 +465,20 @@ int main()
 	rbt.Print();
 	this_thread::sleep_for(1s);
 
-	rbt.Insert(40);
+	//rbt.Insert(40);
+	//rbt.Print();
+	//this_thread::sleep_for(1s);
+
+	//rbt.Insert(50);
+	//rbt.Print();
+	//this_thread::sleep_for(1s);
+
+	rbt.Delete(20);
 	rbt.Print();
 	this_thread::sleep_for(1s);
 
-	rbt.Insert(50);
+
+	rbt.Delete(25);
 	rbt.Print();
 	this_thread::sleep_for(1s);
 	return 0;

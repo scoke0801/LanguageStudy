@@ -16,6 +16,7 @@ enum class ConsoleColor
 
 void SetCursorPosition(int x, int y);
 void SetCursorColor(ConsoleColor color);
+void ShowConsoleCurse(bool flag);
 
 enum class Color
 {
@@ -52,7 +53,7 @@ public:
 
 	void Print(Node* node, int x, int y);
 
-	void Print() { Print(_root, 10, 0); }
+	void Print();
 
 	Node* Search(Node* node, int key);
 
@@ -66,8 +67,10 @@ public:
 
 	// u 서브트리를 v서브트리로 교체.
 	void Replace(Node* u, Node* v);
+
 	void Delete(Node* node);
 	void Delete(int key);
+	void DeleteFixup(Node* node);
 
 	void LeftRotate(Node* node);
 	void RightRotate(Node* node);
