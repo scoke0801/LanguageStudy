@@ -123,11 +123,11 @@
     <ClCompile Include="1966.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
-    <ClCompile Include="1929.cpp">
-      <Filter>Current</Filter>
-    </ClCompile>
     <ClCompile Include="2108.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1929.cpp">
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

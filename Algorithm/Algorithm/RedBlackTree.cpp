@@ -68,8 +68,11 @@ void RedBlackTree::Insert(int key)
 void RedBlackTree::InsertFixup(Node* node)
 {
 	// 1) p = red, uncle = red
-	// 2) p = red, uncle = black ( triangle )
-	// 3) p = red, unclde = black ( list )
+	// -> p = black, uncle = black, pp = red로 바꿈
+	// 2) p = red, uncle = black (triangle)
+	// -> 회전을 통해 case 3으로 바꿈
+	// 3) p = red, uncle = black (list)	
+	// -> 색상 변경 + 회전
 
 	//		[parent parent]
 	// [parent]			[uncle]
@@ -77,7 +80,7 @@ void RedBlackTree::InsertFixup(Node* node)
 
 	while (node->parent->color == Color::Red) {
 		if (node->parent == node->parent->parent->left) {
-			Node* uncle = node->parent->parent->left;
+			Node* uncle = node->parent->parent->right;
 				
 			if (uncle->color == Color::Red) {
 				node->parent->color = Color::Black;	// p
@@ -125,6 +128,8 @@ void RedBlackTree::InsertFixup(Node* node)
 			}
 		}
 	}
+
+	_root->color = Color::Black;
 }
 
 void RedBlackTree::Print_PreOrder(Node* node)
@@ -308,8 +313,8 @@ void RedBlackTree::RightRotate(Node* y)
 
 	y->left = x->right;
 
-	if (y->right != _nil) {
-		y->right->parent = x;
+	if (x->right != _nil) {
+		x->right->parent = y;
 	}
 
 	x->parent = y->parent;
@@ -333,35 +338,29 @@ int main()
 	//BinarySearch(82);
 
 	RedBlackTree rbt;
+
 	rbt.Insert(30);
 	rbt.Print();
 	this_thread::sleep_for(1s);
 
 	rbt.Insert(10);
 	rbt.Print();
-	this_thread::sleep_for(1s);	
+	this_thread::sleep_for(1s);
 
 	rbt.Insert(20);
 	rbt.Print();
-	this_thread::sleep_for(1s);	
+	this_thread::sleep_for(1s);
 
 	rbt.Insert(25);
 	rbt.Print();
-	this_thread::sleep_for(1s);		
-	
+	this_thread::sleep_for(1s);
+
 	rbt.Insert(40);
 	rbt.Print();
 	this_thread::sleep_for(1s);
 
- 	rbt.Insert(50);
+	rbt.Insert(50);
 	rbt.Print();
 	this_thread::sleep_for(1s);
-
-//	bst.Print();
-
-	rbt.Delete(25);
-
-	rbt.Print();
-	
 	return 0;
 }
