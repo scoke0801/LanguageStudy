@@ -3,15 +3,16 @@
 using namespace std;
 
 int map[501][501];
-
-constexpr int MAX_HEIGHT = 256;
-
 int main()
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(nullptr);
 
+	int bestTime = INT_MAX;
+	int bestHeight = 0;
+
 	int N, M, B;
+
 	cin >> N >> M >> B;
 	for (int i = 0; i < N; ++i) {
 		for (int j = 0; j < M; ++j) {
@@ -19,27 +20,30 @@ int main()
 		}
 	}
 
-	int bestTime = INT_MAX;
-	int bestHeight = 0;
-	for (int i = 0; i <= MAX_HEIGHT; ++i) {
-		int poket = 0;
-		int fill = 0;
-		for (int j = 0; j < N; ++j) {
-			for (int k = 0; k < M; ++k) {
-				int height = map[j][k] - i;
-				if (height > 0) { fill += height; }
-				else if (height < 0) { poket -= height; }
+	for (int h = 0; h <= 256; ++h) {
+		int time = 0;
+
+		int putInven = 0;
+		int putOnBlock = 0;
+		for (int i = 0; i < N; ++i) {
+			for (int j = 0; j < M; ++j) {
+				int height = map[i][j] - h;
+				if (height > 0) {
+					putInven += height;
+				}
+				else if(height < 0) {
+					putOnBlock -= height;
+				}
 			}
 		}
-
-		if (fill + B >= poket) {
-			int time = fill * 2 + poket;
+		if (putInven + B >= putOnBlock) {
+			int time = 2 * putInven + putOnBlock;
 			if (bestTime >= time) {
 				bestTime = time;
-				bestHeight = i;
+				bestHeight = h;
 			}
 		}
 	}
 
-	cout << bestTime << " " << bestHeight << "\n";
+	cout << bestTime << " " << bestHeight;
 }
