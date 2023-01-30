@@ -441,45 +441,44 @@ void RedBlackTree::RightRotate(Node* y)
 	x->right = y;
 	y->parent = x;
 }
-
-int main()
-{
-	//numbers = vector<int>{ 1, 8, 15, 23, 32, 44, 56, 63, 81, 91 };
-	//BinarySearch(82);
-
-	RedBlackTree rbt;
-
-	rbt.Insert(30);
-	rbt.Print();
-	this_thread::sleep_for(1s);
-
-	rbt.Insert(10);
-	rbt.Print();
-	this_thread::sleep_for(1s);
-
-	rbt.Insert(20);
-	rbt.Print();
-	this_thread::sleep_for(1s);
-
-	rbt.Insert(25);
-	rbt.Print();
-	this_thread::sleep_for(1s);
-
-	//rbt.Insert(40);
-	//rbt.Print();
-	//this_thread::sleep_for(1s);
-
-	//rbt.Insert(50);
-	//rbt.Print();
-	//this_thread::sleep_for(1s);
-
-	rbt.Delete(20);
-	rbt.Print();
-	this_thread::sleep_for(1s);
-
-
-	rbt.Delete(25);
-	rbt.Print();
-	this_thread::sleep_for(1s);
-	return 0;
-}
+//
+//int main()
+//{
+//	//numbers = vector<int>{ 1, 8, 15, 23, 32, 44, 56, 63, 81, 91 };
+//	//BinarySearch(82);
+//
+//	RedBlackTree rbt;
+//
+//	rbt.Insert(30);
+//	rbt.Print();
+//	this_thread::sleep_for(1s);
+//
+//	rbt.Insert(10);
+//	rbt.Print();
+//	this_thread::sleep_for(1s);
+//
+//	rbt.Insert(20);
+//	rbt.Print();
+//	this_thread::sleep_for(1s);
+//
+//	rbt.Insert(25);
+//	rbt.Print();
+//	this_thread::sleep_for(1s);
+//
+//	//rbt.Insert(40);
+//	//rbt.Print();
+//	//this_thread::sleep_for(1s);
+//
+//	//rbt.Insert(50);
+//	//rbt.Print();
+//	//this_thread::sleep_for(1s);
+//
+//	rbt.Delete(20);
+//	rbt.Print();
+//	this_thread::sleep_for(1s);
+//
+//	rbt.Delete(25);
+//	rbt.Print();
+//	this_thread::sleep_for(1s);
+//	return 0;
+//}

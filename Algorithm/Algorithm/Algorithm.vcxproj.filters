@@ -10,6 +10,9 @@
     <Filter Include="Main\Tree">
       <UniqueIdentifier>{9ab24be0-55d7-470c-b362-63db4b29af6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\Sort">
+      <UniqueIdentifier>{01071bec-fc3a-4857-b11c-530ffaf626e7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicArray.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="RedBlackTree.cpp">
       <Filter>Main\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>Main\Sort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
