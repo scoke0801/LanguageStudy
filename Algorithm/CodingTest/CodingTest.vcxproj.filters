@@ -151,7 +151,7 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="1012.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
