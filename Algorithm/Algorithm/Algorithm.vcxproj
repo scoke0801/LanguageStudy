@@ -31,6 +31,7 @@
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="RedBlackTree.cpp" />
     <ClCompile Include="Sort.cpp" />
+    <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Tree_1.cpp" />
   </ItemGroup>

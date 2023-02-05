@@ -13,6 +13,9 @@
     <Filter Include="Main\Sort">
       <UniqueIdentifier>{01071bec-fc3a-4857-b11c-530ffaf626e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Spanning">
+      <UniqueIdentifier>{e7799958-5f1a-494c-9a35-e4d5186c4efe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicArray.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="hash.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SpanningTree.cpp">
+      <Filter>Spanning</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
