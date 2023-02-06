@@ -63,6 +63,9 @@
     <ClCompile Include="SpanningTree.cpp">
       <Filter>Spanning</Filter>
     </ClCompile>
+    <ClCompile Include="MST.cpp">
+      <Filter>Spanning</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
