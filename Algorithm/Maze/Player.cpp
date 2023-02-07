@@ -18,7 +18,8 @@ void Player::Update(uint64 deltaTick)
 {
 	if (_pathIndex >= _path.size())
 	{
-		_board->CreateMap();
+		//_board->CreateMap_Kruskal();
+		_board->CreateMap_Prim();
 		Init(_board);
 		return; 
 	}

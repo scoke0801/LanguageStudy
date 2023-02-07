@@ -32,7 +32,8 @@ public:
 	void			Render();
 
 	//Binary Tree 미로 생성 
-	void			CreateMap();
+	void			CreateMap_Kruskal();
+	void			CreateMap_Prim();
 
 	TileType		GetTileType(Pos pos);
 	ConsoleColor	GetTileColor(Pos pos);
