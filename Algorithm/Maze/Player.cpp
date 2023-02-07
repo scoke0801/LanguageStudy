@@ -214,7 +214,7 @@ void Player::FindPath_AStar()
 	Pos dest = _board->GetExitPos();
 
 	// 대각성을 사용하면 8, 사용안하면 4
-	constexpr int DIR_COUNT = 8;
+	constexpr int DIR_COUNT = 4;
 	Pos front[] =
 	{
 		Pos { -1, 0},	// UP

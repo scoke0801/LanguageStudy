@@ -10,6 +10,16 @@ enum class TileType : uint8
 	WALL,
 };
 
+struct CostEdge
+{
+	int cost;
+	Pos u;
+	Pos v;
+
+	bool operator<(const CostEdge& other) {
+		return cost < other.cost;
+	}
+};
 class Player;
 
 class Board
