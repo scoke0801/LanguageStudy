@@ -27,6 +27,7 @@
     <ClCompile Include="GraphDFS.cpp" />
     <ClCompile Include="hash.cpp" />
     <ClCompile Include="HeapTree.cpp" />
+    <ClCompile Include="LIS.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="MST.cpp" />
     <ClCompile Include="Queue.cpp" />

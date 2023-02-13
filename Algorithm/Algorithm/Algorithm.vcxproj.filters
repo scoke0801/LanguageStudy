@@ -16,6 +16,9 @@
     <Filter Include="Spanning">
       <UniqueIdentifier>{e7799958-5f1a-494c-9a35-e4d5186c4efe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main\DP">
+      <UniqueIdentifier>{e796bf18-8fe3-47ed-a55e-5f97f7c508ce}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DynamicArray.cpp">
@@ -65,6 +68,9 @@
     </ClCompile>
     <ClCompile Include="MST.cpp">
       <Filter>Spanning</Filter>
+    </ClCompile>
+    <ClCompile Include="LIS.cpp">
+      <Filter>Main\DP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
