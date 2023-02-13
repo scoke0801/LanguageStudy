@@ -36,6 +36,7 @@
     <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Tree_1.cpp" />
+    <ClCompile Include="TrianglePath.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h" />
