@@ -35,6 +35,7 @@
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="SpanningTree.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="TicTacToe.cpp" />
     <ClCompile Include="Tree_1.cpp" />
     <ClCompile Include="TrianglePath.cpp" />
   </ItemGroup>

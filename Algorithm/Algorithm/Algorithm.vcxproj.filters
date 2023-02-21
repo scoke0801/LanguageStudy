@@ -72,7 +72,12 @@
     <ClCompile Include="LIS.cpp">
       <Filter>Main\DP</Filter>
     </ClCompile>
-    <ClCompile Include="TrianglePath.cpp" />
+    <ClCompile Include="TicTacToe.cpp">
+      <Filter>Main\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="TrianglePath.cpp">
+      <Filter>Main\DP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">
