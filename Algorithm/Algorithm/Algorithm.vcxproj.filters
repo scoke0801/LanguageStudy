@@ -78,6 +78,9 @@
     <ClCompile Include="TrianglePath.cpp">
       <Filter>Main\DP</Filter>
     </ClCompile>
+    <ClCompile Include="Enchant.cpp">
+      <Filter>Main\DP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">

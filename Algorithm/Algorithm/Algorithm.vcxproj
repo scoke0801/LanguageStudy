@@ -22,6 +22,7 @@
     <ClCompile Include="BinaryTree.cpp" />
     <ClCompile Include="Dijkstra.cpp" />
     <ClCompile Include="DynamicArray.cpp" />
+    <ClCompile Include="Enchant.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="GraphBFS.cpp" />
     <ClCompile Include="GraphDFS.cpp" />
