@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -28,6 +28,7 @@
     <ClCompile Include="GraphDFS.cpp" />
     <ClCompile Include="hash.cpp" />
     <ClCompile Include="HeapTree.cpp" />
+    <ClCompile Include="Kartrider.cpp" />
     <ClCompile Include="LIS.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="MST.cpp" />
