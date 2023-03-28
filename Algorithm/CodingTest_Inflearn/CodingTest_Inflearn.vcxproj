@@ -144,6 +144,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="17.cpp" />
+    <ClCompile Include="18.cpp" />
+    <ClCompile Include="19.cpp" />
+    <ClCompile Include="20.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
