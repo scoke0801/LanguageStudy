@@ -81,6 +81,7 @@
     <ClCompile Include="Enchant.cpp">
       <Filter>Main\DP</Filter>
     </ClCompile>
+    <ClCompile Include="Kartrider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Common.h">

@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Algorithm\63.cpp" />
     <ClCompile Include="17.cpp" />
     <ClCompile Include="18.cpp" />
     <ClCompile Include="19.cpp" />
