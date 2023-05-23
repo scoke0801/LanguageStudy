@@ -24,10 +24,10 @@ enum class Color
 	Black = 1,
 };
 
-struct Node {
-	Node* parent = nullptr;
-	Node* left = nullptr;
-	Node* right = nullptr;
+struct Edge {
+	Edge* parent = nullptr;
+	Edge* left = nullptr;
+	Edge* right = nullptr;
 	int		key = {};
 	Color color = Color::Black;
 };
@@ -45,37 +45,37 @@ public:
 
 public:
 	void Insert(int key);
-	void InsertFixup(Node* node);
+	void InsertFixup(Edge* node);
 
-	void Print_PreOrder(Node* node);
+	void Print_PreOrder(Edge* node);
 
 	void Print_InOrder() { Print_PreOrder(_root); }
 
-	void Print(Node* node, int x, int y);
+	void Print(Edge* node, int x, int y);
 
 	void Print();
 
-	Node* Search(Node* node, int key);
+	Edge* Search(Edge* node, int key);
 
-	Node* Search2(Node* node, int key); 
+	Edge* Search2(Edge* node, int key); 
 
-	Node* Min(Node* node);
+	Edge* Min(Edge* node);
 
-	Node* Max(Node* node);
+	Edge* Max(Edge* node);
 
-	Node* Next(Node* node);
+	Edge* Next(Edge* node);
 
 	// u 서브트리를 v서브트리로 교체.
-	void Replace(Node* u, Node* v);
+	void Replace(Edge* u, Edge* v);
 
-	void Delete(Node* node);
+	void Delete(Edge* node);
 	void Delete(int key);
-	void DeleteFixup(Node* node);
+	void DeleteFixup(Edge* node);
 
-	void LeftRotate(Node* node);
-	void RightRotate(Node* node);
+	void LeftRotate(Edge* node);
+	void RightRotate(Edge* node);
 
 private:
-	Node* _root = nullptr;
-	Node* _nil = nullptr;
+	Edge* _root = nullptr;
+	Edge* _nil = nullptr;
 };

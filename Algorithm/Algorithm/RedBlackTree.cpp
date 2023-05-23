@@ -25,7 +25,7 @@ void ShowConsoleCursor(bool flag)
 
 RedBlackTree::RedBlackTree()
 {
-	_nil = new Node(); // Black
+	_nil = new Edge(); // Black
 	_root = _nil;
 }
 
@@ -36,11 +36,11 @@ RedBlackTree::~RedBlackTree()
 
 void RedBlackTree::Insert(int key)
 {
-	Node* newNode = new Node();
+	Edge* newNode = new Edge();
 	newNode->key = key;
 
-	Node* node = _root;
-	Node* parent = _nil;
+	Edge* node = _root;
+	Edge* parent = _nil;
 
 	while (node != _nil) {
 		parent = node;
@@ -74,7 +74,7 @@ void RedBlackTree::Insert(int key)
 	InsertFixup(newNode);
 }
 
-void RedBlackTree::InsertFixup(Node* node)
+void RedBlackTree::InsertFixup(Edge* node)
 {
 	// 1) p = red, uncle = red
 	// -> p = black, uncle = black, pp = red로 바꿈
@@ -89,7 +89,7 @@ void RedBlackTree::InsertFixup(Node* node)
 
 	while (node->parent->color == Color::Red) {
 		if (node->parent == node->parent->parent->left) {
-			Node* uncle = node->parent->parent->right;
+			Edge* uncle = node->parent->parent->right;
 				
 			if (uncle->color == Color::Red) {
 				node->parent->color = Color::Black;	// p
@@ -115,7 +115,7 @@ void RedBlackTree::InsertFixup(Node* node)
 		}
 		else
 		{
-			Node* uncle = node->parent->parent->left;
+			Edge* uncle = node->parent->parent->left;
 
 			if (uncle->color == Color::Red) {
 				node->parent->color = Color::Black;	// p
@@ -141,7 +141,7 @@ void RedBlackTree::InsertFixup(Node* node)
 	_root->color = Color::Black;
 }
 
-void RedBlackTree::Print_PreOrder(Node* node)
+void RedBlackTree::Print_PreOrder(Edge* node)
 {
 	// 중위 순회 
 	// 후위(Post Order)
@@ -153,7 +153,7 @@ void RedBlackTree::Print_PreOrder(Node* node)
 	Print_PreOrder(node->right);
 }
 
-void RedBlackTree::Print(Node* node, int x, int y)
+void RedBlackTree::Print(Edge* node, int x, int y)
 {
 	if (node == _nil) {
 		return;
@@ -181,7 +181,7 @@ void RedBlackTree::Print()
 	Print(_root, 10, 0);
 }
 
-Node* RedBlackTree::Search(Node* node, int key)
+Edge* RedBlackTree::Search(Edge* node, int key)
 {
 	if (node == _nil) { return nullptr; }
 	if (key == node->key) { return node; }
@@ -195,7 +195,7 @@ Node* RedBlackTree::Search(Node* node, int key)
 	}
 }
 
-Node* RedBlackTree::Search2(Node* node, int key)
+Edge* RedBlackTree::Search2(Edge* node, int key)
 {
 	while (node != nullptr) {
 		if (node->key < key) {
@@ -211,7 +211,7 @@ Node* RedBlackTree::Search2(Node* node, int key)
 	return node;
 }
 
-Node* RedBlackTree::Min(Node* node)
+Edge* RedBlackTree::Min(Edge* node)
 {
 	if (node == _nil ) { return nullptr; }
 	while (node->left != _nil ) {
@@ -220,7 +220,7 @@ Node* RedBlackTree::Min(Node* node)
 	return node;
 }
 
-Node* RedBlackTree::Max(Node* node)
+Edge* RedBlackTree::Max(Edge* node)
 {
 	if (node == _nil) { return nullptr; }
 	while (node->right != _nil ) {
@@ -229,7 +229,7 @@ Node* RedBlackTree::Max(Node* node)
 	return node;
 }
 
-Node* RedBlackTree::Next(Node* node)
+Edge* RedBlackTree::Next(Edge* node)
 {
 	// 매개변수로 전달받은 노드 값보다 큰 값중 가장 작은 값을 찾아서 반환.
 	if (node == _nil) { return nullptr; }
@@ -238,7 +238,7 @@ Node* RedBlackTree::Next(Node* node)
 		return Min(node->right);
 	}
 
-	Node* parent = node->parent;
+	Edge* parent = node->parent;
 
 	while (parent != _nil && node == parent->right ) {
 		node = parent;
@@ -248,7 +248,7 @@ Node* RedBlackTree::Next(Node* node)
 	return parent;
 }
 
-void RedBlackTree::Replace(Node* u, Node* v)
+void RedBlackTree::Replace(Edge* u, Edge* v)
 {
 	if (u->parent == _nil) {
 		_root = v;
@@ -267,13 +267,13 @@ void RedBlackTree::Replace(Node* u, Node* v)
 	delete u;
 }
 
-void RedBlackTree::Delete(Node* node)
+void RedBlackTree::Delete(Edge* node)
 {
 	if (node == _nil) { return; }
 
 	if (node->left == _nil) {
 		Color color = node->color;
-		Node* right = node->right;
+		Edge* right = node->right;
 		Replace(node, node->right);
 
 		if (color == Color::Black) {
@@ -282,7 +282,7 @@ void RedBlackTree::Delete(Node* node)
 	}
 	else if (node->right == _nil) {
 		Color color = node->color;
-		Node* left = node->left;
+		Edge* left = node->left;
 		Replace(node, node->left);
 
 		if (color == Color::Black) {
@@ -291,7 +291,7 @@ void RedBlackTree::Delete(Node* node)
 	}
 	else {
 		// 다음 데이터 찾기.
-		Node* next = Next(node);
+		Edge* next = Next(node);
 		node->key = next->key;
 		Delete(next);
 	}
@@ -299,21 +299,21 @@ void RedBlackTree::Delete(Node* node)
 
 void RedBlackTree::Delete(int key)
 {
-	Node* deleteNode = Search(_root, key);
+	Edge* deleteNode = Search(_root, key);
 	Delete(deleteNode);
 }
 
-void RedBlackTree::DeleteFixup(Node* node)
+void RedBlackTree::DeleteFixup(Edge* node)
 {
 	// delete node;
-	Node* x = node;
+	Edge* x = node;
 
 	while (x != _root && x->color == Color::Black) {
 		if (x == x->parent->left)
 		{
 			// case[3]
 			// 형제 노드 silbing
-			Node* s = x->parent->right;
+			Edge* s = x->parent->right;
 			if (s->color == Color::Red) {
 				s->color = Color::Black;
 				x->parent->color = Color::Red;
@@ -348,7 +348,7 @@ void RedBlackTree::DeleteFixup(Node* node)
 		else {
 			// case[3]
 			// 형제 노드 silbing
-			Node* s = x->parent->left;
+			Edge* s = x->parent->left;
 			if (s->color == Color::Red) {
 				s->color = Color::Black;
 				x->parent->color = Color::Red;
@@ -392,9 +392,9 @@ void RedBlackTree::DeleteFixup(Node* node)
 //	[1]		[y]
 //		   [2][3]
 
-void RedBlackTree::LeftRotate(Node* x)
+void RedBlackTree::LeftRotate(Edge* x)
 {
-	Node* y = x->right;
+	Edge* y = x->right;
 
 	x->right = y->left;		// [2];
 
@@ -417,9 +417,9 @@ void RedBlackTree::LeftRotate(Node* x)
 	x->parent = y;
 }
 
-void RedBlackTree::RightRotate(Node* y)
+void RedBlackTree::RightRotate(Edge* y)
 {
-	Node* x = y->left;
+	Edge* x = y->left;
 
 	y->left = x->right;
 
