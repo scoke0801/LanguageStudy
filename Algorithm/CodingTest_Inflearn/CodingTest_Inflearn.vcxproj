@@ -206,6 +206,7 @@
     <ClCompile Include="77.cpp" />
     <ClCompile Include="78.cpp" />
     <ClCompile Include="79.cpp" />
+    <ClCompile Include="80.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
