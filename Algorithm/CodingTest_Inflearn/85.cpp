@@ -2,8 +2,7 @@
 #include <vector>
 using namespace std;
 
-vector<int> nums;
-vector<bool> visit;
+vector<int> nums; 
 
 vector<int> used_op(4);
 vector<int> op(4);		// + - X /
@@ -32,31 +31,21 @@ void DFS(int cur, int level)
 		return;
 	}
 
-	for (int i = 0; i < N; ++i) {
-		if (visit[i]) { continue; }
+	for (int j = 0; j < 4; ++j)
+	{
+		if (used_op[j] >= op[j]) { continue; }
+		++used_op[j];
 
-		int num = nums[i];
-		visit[i] = true;
-		for (int j = 0; 5
-			3 6 1 45 2
-			1 1 1 1 j < 4; ++j)
-		{
-			if (used_op[j] >= op[j]) { continue; }
-			++used_op[j];
+		DFS(Operate(cur, nums[level], j), level + 1);
 
-			DFS(Operate(cur, num, j), level + 1);
-
-			--used_op[j];
-		}
-		visit[i] = false;
+		--used_op[j];
 	}
 }
 
 int main()
 {
 	cin >> N;
-
-	visit.resize(N);
+	
 	for (int i = 0; i < N; ++i) {
 		int num;
 		cin >> num;
@@ -68,13 +57,7 @@ int main()
 		cin >> op[i];
 	}
 
-	for (int i = 0; i < N; ++i) {
-		visit[i] = true;
-		
-		DFS(nums[i], 1);
-
-		visit[i] = false;
-	}
+	DFS(nums[0], 1);
 
 	cout << max_num << "\n";
 	cout << min_num << "\n";
