@@ -13,8 +13,8 @@ enum class TileType : uint8
 struct CostEdge
 {
 	int cost;
-	Pos u;
-	Pos v;
+	Info u;
+	Info v;
 
 	bool operator<(const CostEdge& other) {
 		return cost < other.cost;
@@ -35,11 +35,11 @@ public:
 	void			CreateMap_Kruskal();
 	void			CreateMap_Prim();
 
-	TileType		GetTileType(Pos pos);
-	ConsoleColor	GetTileColor(Pos pos);
+	TileType		GetTileType(Info pos);
+	ConsoleColor	GetTileColor(Info pos);
 
-	Pos				GetEnterPos() { return Pos{ 1,1 }; }
-	Pos				GetExitPos() { return Pos{ _size - 2, _size - 2 }; }
+	Info				GetEnterPos() { return Info{ 1,1 }; }
+	Info				GetExitPos() { return Info{ _size - 2, _size - 2 }; }
 
 	int32			GetSize() { return _size; }
 private:

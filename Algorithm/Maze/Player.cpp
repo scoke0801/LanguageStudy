@@ -32,7 +32,7 @@ void Player::Update(uint64 deltaTick)
 	}
 }
 
-bool Player::CanMove(Pos pos)
+bool Player::CanMove(Info pos)
 {
 	TileType tileType = _board->GetTileType(pos);
 	return tileType == TileType::EMPTY;
@@ -40,20 +40,20 @@ bool Player::CanMove(Pos pos)
 
 void Player::FindPath_RIghtHand()
 {
-	Pos pos = _pos;
+	Info pos = _pos;
 
 	_path.clear();
 	_path.push_back(pos);
 
 	// 목적지 도착하기 전에는 계속 실행
-	Pos dest = _board->GetExitPos();
+	Info dest = _board->GetExitPos();
 
-	Pos front[4] =
+	Info front[4] =
 	{
-		Pos { -1, 0},	// UP
-		Pos { 0, -1},	// LEFT
-		Pos { 1, 0},	// DOWN
-		Pos { 0, 1},	// RIGHT
+		Info { -1, 0},	// UP
+		Info { 0, -1},	// LEFT
+		Info { 1, 0},	// DOWN
+		Info { 0, 1},	// RIGHT
 	};
 
 	while (pos != dest)
@@ -100,7 +100,7 @@ void Player::FindPath_RIghtHand()
 			*/
 		}
 	}
-	stack<Pos> s;
+	stack<Info> s;
 
 	for (size_t i = 0; i < _path.size() - 1; ++i) {
 		if (s.empty() == false && s.top() == _path[i + 1]) {
@@ -115,7 +115,7 @@ void Player::FindPath_RIghtHand()
 		s.push(_path.back());
 	}
 
-	vector<Pos> path;
+	vector<Info> path;
 	while (s.empty() == false) {
 		path.push_back(s.top());
 		s.pop();
@@ -129,26 +129,26 @@ void Player::FindPath_RIghtHand()
 
 void Player::FindPath_BFS()
 {
-	Pos pos = _pos;
+	Info pos = _pos;
 
 	// 목적지 도착하기 전에는 계속 실행
-	Pos dest = _board->GetExitPos();
+	Info dest = _board->GetExitPos();
 
-	Pos front[4] =
+	Info front[4] =
 	{
-		Pos { -1, 0},	// UP
-		Pos { 0, -1},	// LEFT
-		Pos { 1, 0},	// DOWN
-		Pos { 0, 1},	// RIGHT
+		Info { -1, 0},	// UP
+		Info { 0, -1},	// LEFT
+		Info { 1, 0},	// DOWN
+		Info { 0, 1},	// RIGHT
 	};
 
 	const int32 boardSize = _board->GetSize();
 	vector<vector<bool>> discovered(boardSize, vector<bool>(boardSize, false));
 
 	// parent[a] = b; :: a는 b로 인해 발견함.
-	map<Pos, Pos> parent;
+	map<Info, Info> parent;
 
-	queue<Pos> q;
+	queue<Info> q;
 	q.push(pos);
 	discovered[pos.y][pos.x] = true;
 	parent[pos] = pos;
@@ -164,7 +164,7 @@ void Player::FindPath_BFS()
 		
 
 		for (int32 dir = 0; dir < 4; ++dir) {
-			Pos nextPos = pos + front[dir];
+			Info nextPos = pos + front[dir];
 
 			if (CanMove(nextPos) == false) { continue; }
 
@@ -194,7 +194,7 @@ void Player::FindPath_BFS()
 struct PQNode {
 	int32	f;
 	int32	g;
-	Pos		pos;
+	Info		pos;
 
 	bool operator<(const PQNode& other) const { return f < other.f; }
 	bool operator>(const PQNode& other) const { return f > other.f; }
@@ -211,21 +211,21 @@ void Player::FindPath_AStar()
 	// G = 시작점에서 해당 좌표까지 이동하는데 드는 비용( 작을 수록 좋음, 경로에 따라 달라짐 )
 	// H = 목적지에서 얼마나 가까운지 ( 작을 수록 좋음, 고정 )
 
-	Pos start = _pos;
-	Pos dest = _board->GetExitPos();
+	Info start = _pos;
+	Info dest = _board->GetExitPos();
 
 	// 대각성을 사용하면 8, 사용안하면 4
 	constexpr int DIR_COUNT = 4;
-	Pos front[] =
+	Info front[] =
 	{
-		Pos { -1, 0},	// UP
-		Pos { 0, -1},	// LEFT
-		Pos { 1, 0},	// DOWN
-		Pos { 0, 1},	// RIGHT
-		Pos {-1,-1},	// Up_Left
-		Pos { 1, -1},	// Down_Left
-		Pos {1,1},		// Down_Right
-		Pos {-1,1},		// Up_Right
+		Info { -1, 0},	// UP
+		Info { 0, -1},	// LEFT
+		Info { 1, 0},	// DOWN
+		Info { 0, 1},	// RIGHT
+		Info {-1,-1},	// Up_Left
+		Info { 1, -1},	// Down_Left
+		Info {1,1},		// Down_Right
+		Info {-1,1},		// Up_Right
 	};
 
 	int32 cost[] = {
@@ -248,7 +248,7 @@ void Player::FindPath_AStar()
 	vector<vector<int32>> best(boardSize, vector<int32>(boardSize, INT32_MAX));
 
 	// 부모 추적 용도.
-	map<Pos, Pos> parent;
+	map<Info, Info> parent;
 
 	// OpenList
 	priority_queue<PQNode, vector<PQNode>, greater<PQNode>> pq;
@@ -289,7 +289,7 @@ void Player::FindPath_AStar()
 
 		for (int32 dir = 0; dir < DIR_COUNT; ++dir)
 		{
-			Pos nextPos = node.pos + front[dir];
+			Info nextPos = node.pos + front[dir];
 			
 			// 갈 수 있는 지역이 맞는지
 			if (CanMove(nextPos) == false) { continue; }
@@ -314,7 +314,7 @@ void Player::FindPath_AStar()
 
 	_path.clear();
 
-	Pos pos = dest;
+	Info pos = dest;
 	while (true) {
 		_path.push_back(pos);
 

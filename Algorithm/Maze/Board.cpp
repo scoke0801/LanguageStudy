@@ -30,7 +30,7 @@ void Board::Render()
 	{
 		for (int32 x = 0; x < 25; ++x)
 		{
-			ConsoleColor color = GetTileColor(Pos{ y,x });
+			ConsoleColor color = GetTileColor(Info{ y,x });
 			ConsoleHelper::SetCursorColor(color);
 
 			cout << TILE;
@@ -68,12 +68,12 @@ void Board::CreateMap_Kruskal()
 
 			if (x < _size - 2) {
 				const int32 randValue = ::rand() % 100;
-				edges.push_back(CostEdge{ randValue, Pos{y,x}, Pos{y, x + 2} });
+				edges.push_back(CostEdge{ randValue, Info{y,x}, Info{y, x + 2} });
 			}
 
 			if (y < _size - 2) {
 				const int32 randValue = ::rand() % 100;
-				edges.push_back(CostEdge{ randValue, Pos{y,x}, Pos{y + 2, x} });
+				edges.push_back(CostEdge{ randValue, Info{y,x}, Info{y + 2, x} });
 			}
 		}
 	}
@@ -121,7 +121,7 @@ void Board::CreateMap_Prim()
 	struct CostEdge
 	{
 		int cost;
-		Pos vtx;
+		Info vtx;
 
 		bool operator<(const CostEdge& other) const {
 			return cost < other.cost;
@@ -144,7 +144,7 @@ void Board::CreateMap_Prim()
 	}
 
 	// edges[u] : u 정점과 연결된 간선 목록.
-	map<Pos, vector<CostEdge>> edges;
+	map<Info, vector<CostEdge>> edges;
 
 	// edges후보를 랜덤 cost로 등록한다.
 	for (int32 y = 0; y < _size; ++y) {
@@ -156,8 +156,8 @@ void Board::CreateMap_Prim()
 			// 우측 연결하는 간선 후보.
 			if (x < _size - 2) {
 				const int32 randValue = ::rand() % 100;
-				Pos u = Pos{ y, x };
-				Pos v = Pos{ y, x + 2 };
+				Info u = Info{ y, x };
+				Info v = Info{ y, x + 2 };
 				edges[u].push_back(CostEdge{ randValue, v });
 				edges[v].push_back(CostEdge{ randValue, u });
 			}
@@ -165,8 +165,8 @@ void Board::CreateMap_Prim()
 			// 아래로 연결하는 간선 후보.
 			if (y < _size - 2) {
 				const int32 randValue = ::rand() % 100;
-				Pos u = Pos{ y, x };
-				Pos v = Pos{ y + 2, x };
+				Info u = Info{ y, x };
+				Info v = Info{ y + 2, x };
 				edges[u].push_back(CostEdge{ randValue, v });
 				edges[v].push_back(CostEdge{ randValue, u });
 			}
@@ -174,13 +174,13 @@ void Board::CreateMap_Prim()
 	}
 
 	// 해당 정점이 트리에 포함되어 있나?
-	map<Pos, bool> added;
+	map<Info, bool> added;
 
 	// 어떤 정점이 누구에 의해 연결 되었는지.
-	map<Pos, Pos> parent;
+	map<Info, Info> parent;
 
 	// 만들고 있는 트리에 인접한 간섭 중, 해당 정점에 닿는 최소 간선의 정보.
-	map<Pos, int32> best;
+	map<Info, int32> best;
 
 	// 다익스트라랑 거의 유사함
 	// 단, 다익스트라에서는 best가 시작점을 기준으로 한 cost
@@ -188,13 +188,13 @@ void Board::CreateMap_Prim()
 	
 	for (int32 y = 0; y < _size; ++y) {
 		for (int32 x = 0; x < _size; ++x) {
-			best[Pos{ y,x }] = INT32_MAX;
-			added[Pos{ y,x }] = false; // 옵션
+			best[Info{ y,x }] = INT32_MAX;
+			added[Info{ y,x }] = false; // 옵션
 		}
 	}
 
 	priority_queue<CostEdge> pq;
-	const Pos startPos = Pos{ 1, 1 }; // 랜덤으로 정해도 됨.
+	const Info startPos = Info{ 1, 1 }; // 랜덤으로 정해도 됨.
 
 	pq.push({ CostEdge{0, startPos} });
 
@@ -206,7 +206,7 @@ void Board::CreateMap_Prim()
 		pq.pop();
 
 		// 새로 연결된 정점
-		Pos v = bestEdeg.vtx;
+		Info v = bestEdeg.vtx;
 
 		// 이미 추가 되었다면 스킵.
 		if (added[v]) {
@@ -242,7 +242,7 @@ void Board::CreateMap_Prim()
 	}
 }
 
-TileType Board::GetTileType(Pos pos)
+TileType Board::GetTileType(Info pos)
 {
 	if (pos.x < 0 || pos.y >= _size) {
 		return TileType::NONE;
@@ -254,7 +254,7 @@ TileType Board::GetTileType(Pos pos)
 	return _tile[pos.y][pos.x];
 }
 
-ConsoleColor Board::GetTileColor(Pos pos)
+ConsoleColor Board::GetTileColor(Info pos)
 {
 	if (_player && _player->GetPos() == pos) {
 		return ConsoleColor::YELLOW;

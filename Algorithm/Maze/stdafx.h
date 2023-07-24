@@ -9,31 +9,31 @@
 
 using namespace std;
 
-struct Pos
+struct Info
 {
-	bool operator==(Pos& other)
+	bool operator==(Info& other)
 	{
 		return y == other.y && x == other.x;
 	}
 
-	bool operator!=(Pos& other)
+	bool operator!=(Info& other)
 	{
 		return !(*this == other);
 	}
-	bool operator<(const Pos& other) const
+	bool operator<(const Info& other) const
 	{
 		if (y != other.y) { return y < other.y; }
 		return x < other.x;
 	}
 
-	Pos operator+(Pos& other)
+	Info operator+(Info& other)
 	{
-		Pos ret;
+		Info ret;
 		ret.x = x + other.x;
 		ret.y = y + other.y;
 		return ret;
 	}
-	Pos& operator+=(Pos& other)
+	Info& operator+=(Info& other)
 	{
 		x += other.x;
 		y += other.y;
