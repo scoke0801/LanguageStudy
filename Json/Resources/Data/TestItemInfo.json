@@ -1,0 +1,18 @@
+{
+  "DropItems": [
+    {
+      "DataId": 60001,
+      "DropItemType": 0,
+      "NameTextID": "포션",
+      "DescriptionTextID": "Potion",
+      "SpriteName": "Potion_Icon.sprite"
+    },
+    {
+      "DataId": 60002,
+      "DropItemType": 0,
+      "NameTextID": "하이포션",
+      "DescriptionTextID": "High Potion",
+      "SpriteName": "Potion_High_Icon.sprite"
+    }
+  ]
+}
