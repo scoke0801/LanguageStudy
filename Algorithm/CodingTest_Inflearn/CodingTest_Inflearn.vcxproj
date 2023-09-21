@@ -221,6 +221,8 @@
     <ClCompile Include="dp_3.cpp" />
     <ClCompile Include="dp_4.cpp" />
     <ClCompile Include="dp_5.cpp" />
+    <ClCompile Include="dp_6.cpp" />
+    <ClCompile Include="dp_7.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
