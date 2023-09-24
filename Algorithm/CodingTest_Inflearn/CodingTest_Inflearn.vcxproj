@@ -223,6 +223,8 @@
     <ClCompile Include="dp_5.cpp" />
     <ClCompile Include="dp_6.cpp" />
     <ClCompile Include="dp_7.cpp" />
+    <ClCompile Include="dp_8.cpp" />
+    <ClCompile Include="dp_9.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
