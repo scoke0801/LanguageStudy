@@ -218,6 +218,8 @@
     <ClCompile Include="89.cpp" />
     <ClCompile Include="90.cpp" />
     <ClCompile Include="dp_1.cpp" />
+    <ClCompile Include="dp_10.cpp" />
+    <ClCompile Include="dp_11.cpp" />
     <ClCompile Include="dp_3.cpp" />
     <ClCompile Include="dp_4.cpp" />
     <ClCompile Include="dp_5.cpp" />
