@@ -227,6 +227,8 @@
     <ClCompile Include="dp_7.cpp" />
     <ClCompile Include="dp_8.cpp" />
     <ClCompile Include="dp_9.cpp" />
+    <ClCompile Include="Flod_Warshalll2.cpp" />
+    <ClCompile Include="floyd warshall.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
