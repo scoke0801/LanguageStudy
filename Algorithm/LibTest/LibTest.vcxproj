@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b9dac912-c108-45eb-8636-238790d5851f}</ProjectGuid>
-    <RootNamespace>CodingTestInflearn</RootNamespace>
+    <ProjectGuid>{74fad1d3-3bb3-4ebb-a57b-1e987a4fee03}</ProjectGuid>
+    <RootNamespace>LibTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,28 +70,13 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)Output\</OutDir>
-    <TargetName>AA</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)Output\</OutDir>
-    <TargetName>AA</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)Output\</OutDir>
-    <TargetName>AA</TargetName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(SolutionDir)Output\</OutDir>
-    <TargetName>AA</TargetName>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -106,6 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -120,6 +106,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,6 +121,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,93 +131,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Algorithm\63.cpp" />
-    <ClCompile Include="17.cpp" />
-    <ClCompile Include="18.cpp" />
-    <ClCompile Include="19.cpp" />
-    <ClCompile Include="20.cpp" />
-    <ClCompile Include="21.cpp" />
-    <ClCompile Include="22.cpp" />
-    <ClCompile Include="23.cpp" />
-    <ClCompile Include="24.cpp" />
-    <ClCompile Include="25.cpp" />
-    <ClCompile Include="26.cpp" />
-    <ClCompile Include="27.cpp" />
-    <ClCompile Include="28.cpp" />
-    <ClCompile Include="29.cpp" />
-    <ClCompile Include="30.cpp" />
-    <ClCompile Include="31.cpp" />
-    <ClCompile Include="32.cpp" />
-    <ClCompile Include="33.cpp" />
-    <ClCompile Include="34.cpp" />
-    <ClCompile Include="35.cpp" />
-    <ClCompile Include="36.cpp" />
-    <ClCompile Include="37.cpp" />
-    <ClCompile Include="38.cpp" />
-    <ClCompile Include="39.cpp" />
-    <ClCompile Include="40.cpp" />
-    <ClCompile Include="41.cpp" />
-    <ClCompile Include="42.cpp" />
-    <ClCompile Include="43.cpp" />
-    <ClCompile Include="44.cpp" />
-    <ClCompile Include="45.cpp" />
-    <ClCompile Include="46.cpp" />
-    <ClCompile Include="47.cpp" />
-    <ClCompile Include="48.cpp" />
-    <ClCompile Include="49.cpp" />
-    <ClCompile Include="50.cpp" />
-    <ClCompile Include="51.cpp" />
-    <ClCompile Include="52.cpp" />
-    <ClCompile Include="53.cpp" />
-    <ClCompile Include="54.cpp" />
-    <ClCompile Include="55.cpp" />
-    <ClCompile Include="56.cpp" />
-    <ClCompile Include="57.cpp" />
-    <ClCompile Include="58.cpp" />
-    <ClCompile Include="59.cpp" />
-    <ClCompile Include="60.cpp" />
-    <ClCompile Include="61.cpp" />
-    <ClCompile Include="62.cpp" />
-    <ClCompile Include="64.cpp" />
-    <ClCompile Include="65.cpp" />
-    <ClCompile Include="66.cpp" />
-    <ClCompile Include="67.cpp" />
-    <ClCompile Include="68.cpp" />
-    <ClCompile Include="69.cpp" />
-    <ClCompile Include="70.cpp" />
-    <ClCompile Include="71.cpp" />
-    <ClCompile Include="72.cpp" />
-    <ClCompile Include="73.cpp" />
-    <ClCompile Include="74.cpp" />
-    <ClCompile Include="75.cpp" />
-    <ClCompile Include="76.cpp" />
-    <ClCompile Include="77.cpp" />
-    <ClCompile Include="78.cpp" />
-    <ClCompile Include="79.cpp" />
-    <ClCompile Include="80.cpp" />
-    <ClCompile Include="81.cpp" />
-    <ClCompile Include="82.cpp" />
-    <ClCompile Include="83.cpp" />
-    <ClCompile Include="84.cpp" />
-    <ClCompile Include="85.cpp" />
-    <ClCompile Include="86.cpp" />
-    <ClCompile Include="87.cpp" />
-    <ClCompile Include="88.cpp" />
-    <ClCompile Include="89.cpp" />
-    <ClCompile Include="90.cpp" />
-    <ClCompile Include="dp_1.cpp" />
-    <ClCompile Include="dp_10.cpp" />
-    <ClCompile Include="dp_11.cpp" />
-    <ClCompile Include="dp_3.cpp" />
-    <ClCompile Include="dp_4.cpp" />
-    <ClCompile Include="dp_5.cpp" />
-    <ClCompile Include="dp_6.cpp" />
-    <ClCompile Include="dp_7.cpp" />
-    <ClCompile Include="dp_8.cpp" />
-    <ClCompile Include="dp_9.cpp" />
-    <ClCompile Include="Flod_Warshalll2.cpp" />
-    <ClCompile Include="floyd warshall.cpp" />
-    <ClCompile Include="topological_sort.cpp" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TestSmartPtr.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
