@@ -184,6 +184,9 @@
       <Filter>Current</Filter>
     </ClCompile>
     <ClCompile Include="23971.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="9655.cpp">
       <Filter>Current</Filter>
     </ClCompile>
   </ItemGroup>
