@@ -208,6 +208,21 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="6588.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2959.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="10448.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1074.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="10972.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="10974.cpp">
       <Filter>Current</Filter>
     </ClCompile>
   </ItemGroup>
