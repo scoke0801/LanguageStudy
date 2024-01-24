@@ -231,11 +231,14 @@
     <ClCompile Include="10819.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
-    <ClCompile Include="6603.cpp">
-      <Filter>Current</Filter>
-    </ClCompile>
     <ClCompile Include="14499.cpp">
       <Filter>Tried</Filter>
+    </ClCompile>
+    <ClCompile Include="6603.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1182.cpp">
+      <Filter>Current</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
