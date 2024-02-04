@@ -45,9 +45,6 @@
     <ClCompile Include="3085.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
-    <ClCompile Include="27277.cpp">
-      <Filter>Tried</Filter>
-    </ClCompile>
     <ClCompile Include="1018.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
@@ -292,6 +289,15 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="16947.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="13032.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="27277.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1021.cpp">
       <Filter>Current</Filter>
     </ClCompile>
   </ItemGroup>

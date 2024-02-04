@@ -5,34 +5,32 @@
 //using namespace std;
 //
 //int main()
-//{
-//	//int N;
-//	//cin >> N;
+//{ 
+//	int N;
+//	cin >> N;
 //
-//	//vector<int> scores(N);
-//	//for (int i = 0; i < N; ++i) {
-//	//	cin >> scores[i];
-//	//}
+//	std::vector<int> scores(N);
+//	
+//	for (int i = 0; i < N; ++i) {
+//		std::cin >> scores[i];
+//	}
+//	std::sort(scores.begin(), scores.end()); 
+//	 
+//	int left = 0;
+//	int right = N - 1;
 //
-//	int N = 6;
-//	vector<int> scores = { 1, 4, 3 , 5, 6, 2 };
-//
-//	std::sort(scores.begin(), scores.end(), std::greater<int>());
-//	// 현재 좌표에서 각 요소들을 계산했을 때 최대 값이 되는 경우를 탐색
-//
-//	int score = scores[0];
-//	int back = N - 1;
-//	for (int i = 1; i < N - 1; ++i) {
-//		std::swap(scores[i], scores[back]);
-//
-//		score += max(0, scores[i] - scores[i - 1]);
-//		--back;
+//	std::vector<int> buffer;
+//	while (left <= right) 
+//	{
+//		buffer.push_back(scores[right--]);
+//		buffer.push_back(scores[left++]);
 //	}
 //
-//	for (int n : scores) {
-//		cout << n << " ";
+//	int score = buffer[0];
+//	for (int i = 1; i < buffer.size(); ++i)
+//	{
+//		score += std::max(0, buffer[i] - buffer[i - 1]);
 //	}
-//
-//	cout << "\n" << score << "\n";
+//	std::cout<< score << "\n";
 //	return 0;
 //}
