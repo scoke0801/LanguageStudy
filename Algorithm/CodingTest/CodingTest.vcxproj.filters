@@ -192,9 +192,6 @@
     <ClCompile Include="15989.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
-    <ClCompile Include="11727.cpp">
-      <Filter>Solved</Filter>
-    </ClCompile>
     <ClCompile Include="10815.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
@@ -322,7 +319,19 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="16948.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11727.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11052.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="16149.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="15990.cpp">
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
