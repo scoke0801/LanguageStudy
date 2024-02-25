@@ -379,10 +379,19 @@
       <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="1931.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
     </ClCompile>
     <ClCompile Include="2138.cpp">
-      <Filter>Current</Filter>
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2109.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="12015.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="14003.cpp">
+      <Filter>Solved</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
