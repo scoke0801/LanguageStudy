@@ -1,21 +1,33 @@
-//#include<stdio.h>
-//#include<vector>
-//#include<algorithm>
 //#include <iostream>
-//
+//#include <cmath>
 //using namespace std;
-//void D(int x) {
-//	if (x == 0) return;
-//	else {
-//		D(x / 2);
-//		printf("%d", x % 2);
-//	}
+//
+//int N, R, C; 
+//int ans = 0;
+//void Z(int x, int y, int size) 
+//{
+//    if (C == x && R == y) { 
+//        std::cout << ans << "\n";
+//        return;
+//    }
+//    else if (C < x + size && R < y + size && C >= x && R >= y) 
+//    {
+//        Z(x, y, size / 2);
+//        Z(x + size / 2, y, size / 2);
+//        Z(x, y + size / 2, size / 2);
+//        Z(x + size / 2, y + size / 2, size / 2);
+//    }
+//    else 
+//    {
+//        ans += size * size;
+//    }
 //}
-//int main() {
+//int main()
+//{
+//	ios_base::sync_with_stdio(false);
+//	cin.tie(nullptr);
 //
-//	int n;
-//	cin >> n;
-//
-//	D(n);
-//	return 0;
+//	cin >> N >> R >> C;
+//	Z(0, 0, (1 << N));
+//    return 0;
 //}
