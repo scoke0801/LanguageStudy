@@ -426,5 +426,110 @@
     <ClCompile Include="9465.cpp">
       <Filter>Solved</Filter>
     </ClCompile>
+    <ClCompile Include="15650.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1080.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1285.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1309.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1339.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1629.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1699.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="1912.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2143.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2193.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2225.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="2529.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="5430.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="5525.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="7662.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="9019.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="10844.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11053.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11057.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11286.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="11403.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="12865.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="14002.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="14500.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="14502.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="14890.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="15988.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="16940.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="16946.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="20055.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="21736.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="15652.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="15654.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="15657.cpp">
+      <Filter>Solved</Filter>
+    </ClCompile>
+    <ClCompile Include="15663.cpp">
+      <Filter>Current</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
