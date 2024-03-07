@@ -1,63 +1,41 @@
-// #include <iostream>
-// #include <vector>
-// #include <climits>
-// using namespace std;
+#include<iostream>
+#include<algorithm>
+using namespace std;
 
-// struct Obj
-// {
-//     int w, v;
-//     Obj(){}
-//     Obj(int w, int v):w(w),v(v)
-//     {}
-// };
+int N, K;
+int DP[101][100001];
+int W[101];
+int V[101];
 
-// std::vector<bool> visited;
-// std::vector<Obj> buffer;
-// int N, K;
-// int ans = INT_MIN;
+// Á¡È­½Ä max(DP[i-1][j], DP[i-1][j-W[i]])
 
-// void Dfs(int curW, int curV, int level)
-// {
-//     if(level == N)
-//     {
-//         ans = std::max(ans, curV);
-//         return;
-//     }
+int main()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cin >> N >> K;
 
-//     for(int i =0 ; i < N; ++i)
-//     {
-//         if(visited[i]){continue;}
-//         if(curW + buffer[i].w  > K){continue;}
+	for (int i = 1; i <= N; i++)
+	{
+		cin >> W[i] >> V[i];
+	}
 
-//         visited[i] = true;
+	for (int i = 1; i <= N; i++)
+	{
+		for (int j = 1; j <= K; j++)
+		{
+			if (j - W[i] >= 0)
+			{
+				DP[i][j] = max(DP[i - 1][j], DP[i - 1][j - W[i]] + V[i]);
+			}
+			else
+			{
+				DP[i][j] = DP[i - 1][j];
+			}
+		}
+	}
 
-//         Dfs(curW + buffer[i].w, curV + buffer[i].v, level +1);
+	cout << DP[N][K];
 
-//         visited[i] = false;
-//     }
-
-//     ans = std::max(ans,curV);
-// }
-
-// int main()
-// {
-//     ios_base::sync_with_stdio(false);
-//     cin.tie(nullptr);
-//     cout.tie();
-
-//     cin >> N >> K;
-
-//     buffer.resize(N);
-//     visited.resize(N);
-
-//     for(int i =0 ; i < N; ++i)
-//     {
-//         int w, v;
-//         cin >> w >> v;
-
-//         buffer[i] = Obj(w,v);
-//     }
-//     Dfs(0,0,0);
-
-//     std::cout << ans << "\n";
-// }
+	return 0;
+}
