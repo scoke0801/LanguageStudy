@@ -328,6 +328,7 @@
     <ClCompile Include="9655.cpp" />
     <ClCompile Include="9656.cpp" />
     <ClCompile Include="9663.cpp" />
+    <ClCompile Include="sibal.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
