@@ -11,10 +11,17 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
+
 namespace GUICSharpTest
 {
     public partial class Form1 : Form
     {
+        public class ToParseData
+        {
+            public string Version { get; set; }
+            public string Country { get; set; }
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -66,8 +73,13 @@ namespace GUICSharpTest
                     using (JsonTextReader jsonReader = new JsonTextReader(fileReader))
                     {
                         JObject json = (JObject)JToken.ReadFrom(jsonReader);
+                        string jsonString = JsonConvert.SerializeObject(json, Formatting.Indented);
+                        ToParseData parsedData = JsonConvert.DeserializeObject<ToParseData>(jsonString);
 
-                        Int32 breakPos = 3;
+                        if(false == string.IsNullOrEmpty(parsedData.Version))
+                        {
+                            VersionTextBox.Text = parsedData.Version;
+                        }
                     }
                 }
             }

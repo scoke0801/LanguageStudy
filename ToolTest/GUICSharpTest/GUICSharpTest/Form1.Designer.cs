@@ -29,27 +29,10 @@
         private void InitializeComponent()
         {
             this.SaveButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.VersionTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.LoadButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
-       
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(104, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(155, 21);
-            this.textBox1.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 12);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Version";
             // 
             // SaveButton
             // 
@@ -60,6 +43,22 @@
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // VersionTextBox
+            // 
+            this.VersionTextBox.Location = new System.Drawing.Point(104, 38);
+            this.VersionTextBox.Name = "VersionTextBox";
+            this.VersionTextBox.Size = new System.Drawing.Size(155, 21);
+            this.VersionTextBox.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Version";
             // 
             // LoadButton
             // 
@@ -78,7 +77,7 @@
             this.ClientSize = new System.Drawing.Size(736, 424);
             this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.VersionTextBox);
             this.Controls.Add(this.SaveButton);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -89,7 +88,7 @@
 
         #endregion
         private System.Windows.Forms.Button SaveButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox VersionTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button LoadButton;
     }
