@@ -272,6 +272,8 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.FormClosed += new FormClosedEventHandler(this.MainForm_Cloes);
             this.menuPanel.ResumeLayout(false);
             this.menuIconPanel.ResumeLayout(false);
             this.TitleBarPanel.ResumeLayout(false);

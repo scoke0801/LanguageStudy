@@ -25,7 +25,7 @@ namespace UITest.SubForms
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            SharedData.SaveUserInfo(IdTextBox.Text, passwordTextBox.Text);
+            SharedData.SaveSvnUserInfo(IdTextBox.Text, passwordTextBox.Text);
         }
     }
 }

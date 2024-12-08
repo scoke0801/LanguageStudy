@@ -18,7 +18,6 @@ namespace UITest
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-
         public MainForm()
         {
             InitializeComponent();
@@ -94,6 +93,10 @@ namespace UITest
 
         private void FolderButton_Click(object sender, EventArgs e)
         {
+            if (null != currentForm && currentForm.GetType() == typeof(SubForms.FolderListForm))
+            {
+                return;
+            }
             SubForms.FolderListForm subForm = new SubForms.FolderListForm();
             subForm.notifyMainForm += FileSelectedFormFolderForm;
             OpenSubForm(subForm, sender);
@@ -110,16 +113,28 @@ namespace UITest
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            if(null != currentForm && currentForm.GetType() == typeof(SubForms.EditForm))
+            {
+                return;
+            }
             OpenSubForm(new SubForms.EditForm(), sender);
         }
 
         private void SvnButton_Click(object sender, EventArgs e)
         {
+            if (null != currentForm && currentForm.GetType() == typeof(SubForms.SvnForm))
+            {
+                return;
+            }
             OpenSubForm(new SubForms.SvnForm(), sender);
         }
 
         private void PurgeButton_Click(object sender, EventArgs e)
         {
+            if (null != currentForm && currentForm.GetType() == typeof(SubForms.PurgeForm))
+            {
+                return;
+            }
             SubForms.PurgeForm subForm = new SubForms.PurgeForm();
 
             OpenSubForm(subForm, sender);
@@ -127,6 +142,10 @@ namespace UITest
 
         private void AccountButton_Click(object sender, EventArgs e)
         {
+            if (null != currentForm && currentForm.GetType() == typeof(SubForms.AccountForm))
+            {
+                return;
+            }
             SubForms.AccountForm subForm = new SubForms.AccountForm();
 
             OpenSubForm(subForm, sender);
@@ -134,6 +153,10 @@ namespace UITest
 
         private void SettingButton_Click(object sender, EventArgs e)
         {
+            if (null != currentForm && currentForm.GetType() == typeof(SubForms.SettingForm))
+            {
+                return;
+            }
             SubForms.SettingForm subForm = new SubForms.SettingForm();
 
             OpenSubForm(subForm, sender);
@@ -149,11 +172,11 @@ namespace UITest
         protected override void WndProc(ref Message m)
         {
             const int WM_NCCALCSIZE = 0x0083;//Standar Title Bar - Snap Window
-
             if (m.Msg == WM_NCCALCSIZE && m.WParam.ToInt32() == 1)
             {
                 return;
             }
+
             base.WndProc(ref m);
         }
 
@@ -194,6 +217,17 @@ namespace UITest
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            // 프로그램 시작 시, 저장된 정보를 파일에서 읽어오기.
+            SharedData.LoadUserInfoFromFile();
+        }
+        private void MainForm_Cloes(object sender, FormClosedEventArgs e)
+        {
+            // 프로그램 종료 시, 저장된 정보를 파일에 저장.
+            SharedData.SaveUserInfoToFile();
         }
     }
 }
