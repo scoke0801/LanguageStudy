@@ -34,12 +34,12 @@
             this.purgeButton = new System.Windows.Forms.Button();
             this.svnButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
-            this.fileButton = new System.Windows.Forms.Button();
             this.folderButton = new System.Windows.Forms.Button();
             this.menuIconPanel = new System.Windows.Forms.Panel();
             this.menuButton = new System.Windows.Forms.Button();
             this.TitleBarPanel = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.Button();
+            this.subFormPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
             this.menuIconPanel.SuspendLayout();
             this.TitleBarPanel.SuspendLayout();
@@ -53,7 +53,6 @@
             this.menuPanel.Controls.Add(this.purgeButton);
             this.menuPanel.Controls.Add(this.svnButton);
             this.menuPanel.Controls.Add(this.editButton);
-            this.menuPanel.Controls.Add(this.fileButton);
             this.menuPanel.Controls.Add(this.folderButton);
             this.menuPanel.Controls.Add(this.menuIconPanel);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -73,7 +72,7 @@
             this.optionButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.optionButton.Image = global::UITest.Properties.Resources.Setting;
             this.optionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.optionButton.Location = new System.Drawing.Point(0, 328);
+            this.optionButton.Location = new System.Drawing.Point(0, 280);
             this.optionButton.Name = "optionButton";
             this.optionButton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.optionButton.Size = new System.Drawing.Size(150, 48);
@@ -95,7 +94,7 @@
             this.accoutButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.accoutButton.Image = global::UITest.Properties.Resources.Account1;
             this.accoutButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.accoutButton.Location = new System.Drawing.Point(0, 280);
+            this.accoutButton.Location = new System.Drawing.Point(0, 232);
             this.accoutButton.Name = "accoutButton";
             this.accoutButton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.accoutButton.Size = new System.Drawing.Size(150, 48);
@@ -117,7 +116,7 @@
             this.purgeButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.purgeButton.Image = global::UITest.Properties.Resources.CDN;
             this.purgeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.purgeButton.Location = new System.Drawing.Point(0, 232);
+            this.purgeButton.Location = new System.Drawing.Point(0, 184);
             this.purgeButton.Name = "purgeButton";
             this.purgeButton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.purgeButton.Size = new System.Drawing.Size(150, 48);
@@ -139,7 +138,7 @@
             this.svnButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.svnButton.Image = global::UITest.Properties.Resources.SVN;
             this.svnButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.svnButton.Location = new System.Drawing.Point(0, 184);
+            this.svnButton.Location = new System.Drawing.Point(0, 136);
             this.svnButton.Name = "svnButton";
             this.svnButton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.svnButton.Size = new System.Drawing.Size(150, 48);
@@ -161,7 +160,7 @@
             this.editButton.ForeColor = System.Drawing.Color.Gainsboro;
             this.editButton.Image = global::UITest.Properties.Resources.Edit;
             this.editButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editButton.Location = new System.Drawing.Point(0, 136);
+            this.editButton.Location = new System.Drawing.Point(0, 88);
             this.editButton.Name = "editButton";
             this.editButton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.editButton.Size = new System.Drawing.Size(150, 48);
@@ -172,28 +171,6 @@
             this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.editButton.UseVisualStyleBackColor = true;
             this.editButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // fileButton
-            // 
-            this.fileButton.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.fileButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fileButton.FlatAppearance.BorderSize = 0;
-            this.fileButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fileButton.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fileButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.fileButton.Image = global::UITest.Properties.Resources.File;
-            this.fileButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fileButton.Location = new System.Drawing.Point(0, 88);
-            this.fileButton.Name = "fileButton";
-            this.fileButton.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.fileButton.Size = new System.Drawing.Size(150, 48);
-            this.fileButton.TabIndex = 2;
-            this.fileButton.Tag = "　파일 목록";
-            this.fileButton.Text = "　파일 목록";
-            this.fileButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.fileButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.fileButton.UseVisualStyleBackColor = true;
-            this.fileButton.Click += new System.EventHandler(this.FileButton_Click);
             // 
             // folderButton
             // 
@@ -274,11 +251,20 @@
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
+            // subFormPanel
+            // 
+            this.subFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subFormPanel.Location = new System.Drawing.Point(150, 40);
+            this.subFormPanel.Name = "subFormPanel";
+            this.subFormPanel.Size = new System.Drawing.Size(921, 528);
+            this.subFormPanel.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 568);
+            this.Controls.Add(this.subFormPanel);
             this.Controls.Add(this.TitleBarPanel);
             this.Controls.Add(this.menuPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -300,11 +286,11 @@
         private Button purgeButton;
         private Button svnButton;
         private Button editButton;
-        private Button fileButton;
         private Button accoutButton;
         private Button optionButton;
         private Panel TitleBarPanel;
         private Button menuButton;
         private Button closeButton;
+        private Panel subFormPanel;
     }
 }

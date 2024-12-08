@@ -11,6 +11,8 @@ namespace UITest
         private int borderSize = 2;
         private Size formSize;
 
+        private Form currentForm;
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -41,7 +43,7 @@ namespace UITest
 
         private void ActivateButton(object buttonSender)
         {
-            if(null != buttonSender )
+            if(null != buttonSender)
             {
                 if(currentButton != (Button)buttonSender)
                 {
@@ -51,7 +53,7 @@ namespace UITest
                     currentButton = (Button)buttonSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("¸¼Àº °íµñ", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    currentButton.Font = new System.Drawing.Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 }
             }
         }
@@ -64,29 +66,61 @@ namespace UITest
                 {
                     prevButton.BackColor = Color.FromArgb(50, 52, 77);
                     prevButton.ForeColor = Color.Gainsboro;
-                    prevButton.Font = new System.Drawing.Font("¸¼Àº °íµñ", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    prevButton.Font = new System.Drawing.Font("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 }
             }
         }
 
+        public void OpenSubForm(Form subForm, object sender)
+        {
+            if(currentForm != null)
+            {
+                currentForm.Close();
+            }
+
+            ActivateButton(sender);
+            currentForm = subForm;
+
+            subForm.TopLevel = false;
+            subForm.FormBorderStyle = FormBorderStyle.None;
+            subForm.Dock = DockStyle.Fill;
+
+            subFormPanel.Controls.Add(subForm);
+            subFormPanel.Tag = subForm;
+
+            subForm.BringToFront();
+            subForm.Show();
+        }
+
         private void FolderButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            SubForms.FolderListForm subForm = new SubForms.FolderListForm();
+            subForm.notifyMainForm += FileSelectedFormFolderForm;
+            OpenSubForm(subForm, sender);
+        }
+
+        private void FileSelectedFormFolderForm(string InFilePath)
+        {
+            SubForms.EditForm subForm = new SubForms.EditForm();
+
+            OpenSubForm(subForm, editButton);
+
+            subForm.FileSelected(InFilePath);
         }
 
         private void FileButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenSubForm(new SubForms.FileListForm(), sender);
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenSubForm(new SubForms.EditForm(), sender);
         }
 
         private void SvnButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenSubForm(new SubForms.SvnForm(), sender);
         }
 
         private void PurgeButton_Click(object sender, EventArgs e)

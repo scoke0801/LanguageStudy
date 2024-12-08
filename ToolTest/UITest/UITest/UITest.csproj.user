@@ -4,6 +4,18 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SubForms\EditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SubForms\FileListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SubForms\FolderListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SubForms\SvnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
