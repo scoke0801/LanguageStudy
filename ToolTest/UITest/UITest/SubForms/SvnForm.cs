@@ -16,5 +16,20 @@ namespace UITest.SubForms
         {
             InitializeComponent();
         }
+
+        private void commitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fileSelectButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            if (DialogResult.OK == dialog.ShowDialog())
+            {
+                selectedFile.Text = dialog.FileName;
+            }
+        }
     }
 }
