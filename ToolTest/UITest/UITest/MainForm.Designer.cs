@@ -218,8 +218,9 @@
             this.menuButton.TabIndex = 0;
             this.menuButton.Tag = "  메뉴";
             this.menuButton.Text = "  메뉴";
+            this.menuButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.menuButton.UseVisualStyleBackColor = false;
+            this.menuButton.UseVisualStyleBackColor = true;
             this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
             // 
             // TitleBarPanel

@@ -53,7 +53,7 @@ namespace UITest
                     currentButton = (Button)buttonSender;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("���� ����", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    currentButton.Font = new System.Drawing.Font("맑은 고딕", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace UITest
                 {
                     prevButton.BackColor = Color.FromArgb(50, 52, 77);
                     prevButton.ForeColor = Color.Gainsboro;
-                    prevButton.Font = new System.Drawing.Font("���� ����", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    prevButton.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
                 }
             }
         }
@@ -166,23 +166,27 @@ namespace UITest
             if (menuPanel.Width > 100)
             {
                 menuPanel.Width = 100;
-                //menuButton.Visible = false;
+                menuButton.Text = "";
                 menuButton.Dock = DockStyle.Top;
-                foreach(Button button in menuPanel.Controls.OfType<Button>())
+                menuButton.ImageAlign = ContentAlignment.MiddleCenter;
+                foreach (Button button in menuPanel.Controls.OfType<Button>())
                 {
                     button.Text = "";
                     button.ImageAlign = ContentAlignment.MiddleCenter;
+                    button.Padding = new Padding(0, 0, 0, 0);
                 }
             }
             else
             {
                 menuPanel.Width = 150;
-                menuButton.Visible = true;
+                menuButton.Text = menuButton.Tag.ToString();
                 menuButton.Dock = DockStyle.None;
                 foreach (Button button in menuPanel.Controls.OfType<Button>())
                 {
                     button.Text = button.Tag.ToString();
                     button.ImageAlign = ContentAlignment.MiddleLeft;
+
+                    button.Padding = new Padding(12, 0, 0, 0);
                 }
             }
         }
