@@ -19,7 +19,7 @@ namespace UITest.SubForms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("옵션 저장 성공", "안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

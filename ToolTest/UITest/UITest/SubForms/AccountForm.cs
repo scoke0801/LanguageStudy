@@ -26,6 +26,8 @@ namespace UITest.SubForms
         private void saveButton_Click(object sender, EventArgs e)
         {
             SharedData.SaveSvnUserInfo(IdTextBox.Text, passwordTextBox.Text);
+
+            MessageBox.Show("SVN 계정 정보 저장 성공", "안내", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -14,8 +14,6 @@ namespace UITest
         // 공통 데이터 필드
         private static string _selectedFilePath = "";
 
-        private static string _userSvnId = "";
-        private static string _userSvnPassword = "";
 
         public static string UserSvnID { get { return _userInfo.userSvnId; } }
         public static string UserSvnPassword { get { return _userInfo.userSvnPassword; } }
@@ -42,8 +40,8 @@ namespace UITest
 
         public static void SaveSvnUserInfo(string Id, string passWord)
         {
-            _userSvnId = Id;
-            _userSvnPassword = passWord;
+            _userInfo.userSvnId = Id;
+            _userInfo.userSvnPassword = passWord;
         }
 
         public static void SaveUserInfoToFile()
