@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace UITest.SubForms
 {
-    public partial class FileListForm : Form
+    public partial class SettingForm : Form
     {
-        public FileListForm()
+        public SettingForm()
         {
             InitializeComponent();
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

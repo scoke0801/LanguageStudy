@@ -108,11 +108,6 @@ namespace UITest
             subForm.FileSelected(InFilePath);
         }
 
-        private void FileButton_Click(object sender, EventArgs e)
-        {
-            OpenSubForm(new SubForms.FileListForm(), sender);
-        }
-
         private void EditButton_Click(object sender, EventArgs e)
         {
             OpenSubForm(new SubForms.EditForm(), sender);
@@ -125,17 +120,23 @@ namespace UITest
 
         private void PurgeButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            SubForms.PurgeForm subForm = new SubForms.PurgeForm();
+
+            OpenSubForm(subForm, sender);
         }
 
         private void AccountButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            SubForms.AccountForm subForm = new SubForms.AccountForm();
+
+            OpenSubForm(subForm, sender);
         }
 
         private void SettingButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            SubForms.SettingForm subForm = new SubForms.SettingForm();
+
+            OpenSubForm(subForm, sender);
         }
 
         private void TitleBarPanel_MouseDown(object sender, MouseEventArgs e)

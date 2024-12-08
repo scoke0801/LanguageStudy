@@ -4,13 +4,19 @@
     <Compile Update="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SubForms\AccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SubForms\EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SubForms\FileListForm.cs">
+    <Compile Update="SubForms\FolderListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="SubForms\FolderListForm.cs">
+    <Compile Update="SubForms\PurgeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SubForms\SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SubForms\SvnForm.cs">
