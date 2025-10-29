@@ -137,6 +137,7 @@
     <ClCompile Include="10431.cpp" />
     <ClCompile Include="1057.cpp" />
     <ClCompile Include="1094.cpp" />
+    <ClCompile Include="2166.cpp" />
     <ClCompile Include="2986.cpp" />
     <ClCompile Include="5575.cpp" />
     <ClCompile Include="10448.cpp" />
@@ -333,6 +334,9 @@
     <ClCompile Include="9656.cpp" />
     <ClCompile Include="9663.cpp" />
     <ClCompile Include="sibal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="2166" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -50,5 +50,6 @@
 **/강의자료
 **/*.yml
 **/Model
+**/.idea
 
 *.dSYM
