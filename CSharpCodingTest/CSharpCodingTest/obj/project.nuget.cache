@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "HHKUBi4oVtSwC5VhZqUIhpR/YKFqnDSXfGDK2cLJnAvskDJCBSC8q/CWwrjJYhzjvTu3oEL2KP/UGdPDqtDmcQ==",
+  "dgSpecHash": "ZvrQbcypElU=",
   "success": true,
   "projectFilePath": "C:\\UsingProject\\Study_repo\\CSharpCodingTest\\CSharpCodingTest\\CSharpCodingTest.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\scoke\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\scoke\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.13\\microsoft.netcore.app.ref.6.0.13.nupkg.sha512",
+    "C:\\Users\\scoke\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.13\\microsoft.windowsdesktop.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\scoke\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.13\\microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512",
     "C:\\Users\\scoke\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.13\\microsoft.netcore.app.host.win-x64.6.0.13.nupkg.sha512"
   ],

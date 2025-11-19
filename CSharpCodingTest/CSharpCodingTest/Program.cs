@@ -1,31 +1,76 @@
-﻿using System.Linq;
+﻿using System.Diagnostics;
 
-List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+public class PerformanceComparison
+{
+    // 필드
+    public int PublicField;
+    private int _privateField;
 
-// 필터링
-var evenNumbers = numbers.Where(n => n % 2 == 0);
-Console.WriteLine($"짝수: {string.Join(", ", evenNumbers)}");
+    // 자동 구현 프로퍼티
+    public int AutoProperty { get; set; }
 
-// 변환
-var squares = numbers.Select(n => n * n);
-Console.WriteLine($"제곱: {string.Join(", ", squares)}");
+    // 간단한 프로퍼티
+    public int SimpleProperty
+    {
+        get => _privateField;
+        set => _privateField = value;
+    }
 
-// 정렬
-var sorted = numbers.OrderByDescending(n => n);
+    // 복잡한 프로퍼티
+    public int ComplexProperty
+    {
+        get
+        {
+            Console.WriteLine("복잡한 getter 실행");
+            return _privateField * 2;
+        }
+        set
+        {
+            Console.WriteLine("복잡한 setter 실행");
+            if (value > 0)
+                _privateField = value / 2;
+        }
+    }
 
-// 집계
-int sum = numbers.Sum();
-double average = numbers.Average();
-int max = numbers.Max();
-int min = numbers.Min();
+    public static void PerformanceTest()
+    {
+        var obj = new PerformanceComparison();
+        const int iterations = 10_000_000;
+        var sw = Stopwatch.StartNew();
 
-Console.WriteLine($"합계: {sum}, 평균: {average:F2}");
-Console.WriteLine($"최대: {max}, 최소: {min}");
+        // 필드 접근
+        sw.Start();
+        for (int i = 0; i < iterations; i++)
+        {
+            obj.PublicField = i;
+            var value = obj.PublicField;
+        }
+        sw.Stop();
+        Console.WriteLine($"필드: {sw.ElapsedMilliseconds}ms");
 
-// 복합 쿼리
-var result = numbers
-    .Where(n => n > 5)
-    .Select(n => n * 2)
-    .OrderBy(n => n);
+        // 자동 프로퍼티 접근
+        sw.Restart();
+        for (int i = 0; i < iterations; i++)
+        {
+            obj.AutoProperty = i;
+            var value = obj.AutoProperty;
+        }
+        sw.Stop();
+        Console.WriteLine($"자동 프로퍼티: {sw.ElapsedMilliseconds}ms");
 
-Console.WriteLine($"결과: {string.Join(", ", result)}");
+        // 간단한 프로퍼티 접근
+        sw.Restart();
+        for (int i = 0; i < iterations; i++)
+        {
+            obj.SimpleProperty = i;
+            var value = obj.SimpleProperty;
+        }
+        sw.Stop();
+        Console.WriteLine($"간단한 프로퍼티: {sw.ElapsedMilliseconds}ms");
+    }
+
+    static void Main()
+    {
+        PerformanceTest();
+    }
+}
